@@ -1,4 +1,4 @@
-import { Link } from 'expo-router';
+import { router } from 'expo-router';
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function IndexMenu() {
@@ -9,30 +9,33 @@ export default function IndexMenu() {
 
                 <View style={styles.menuSection}>
                     <Text style={styles.sectionLabel}>📝 專題與實戰</Text>
-                    {/* � TS 理論註解 4: as any */}
+                    {/* TS 理論註解 4: as any */}
                     {/* Expo Router 對型別非常龜毛，如果它還沒爬完本地目錄建好路徑型別，就會報錯說 href 不合法。 */}
                     {/* 所以在這個 href 我們加上 'as any' 來暫時繞過嚴格的路由型別檢查。 */}
-                    <Link href={"/expenseTracker" as any} asChild>
-                        <TouchableOpacity style={[styles.button, { backgroundColor: '#4CAF50', marginBottom: 15 }]}>
-                            <Text style={styles.buttonText}>進入 記帳本 Demo (包含 TS 修正註解)</Text>
-                        </TouchableOpacity>
-                    </Link>
+                    <TouchableOpacity
+                        style={[styles.button, { backgroundColor: '#4CAF50', marginBottom: 15 }]}
+                        onPress={() => router.push("/expenseTracker" as any)}
+                    >
+                        <Text style={styles.buttonText}>進入 記帳本 Demo (包含 TS 修正註解)</Text>
+                    </TouchableOpacity>
 
                     {/* 新增: 登入頁面與 useEffect 教學 */}
-                    <Link href={"/loginScreen" as any} asChild>
-                        <TouchableOpacity style={[styles.button, { backgroundColor: '#2196F3' }]}>
-                            <Text style={styles.buttonText}>進入 登入畫面 Demo (包含 useEffect 教學)</Text>
-                        </TouchableOpacity>
-                    </Link>
+                    <TouchableOpacity
+                        style={[styles.button, { backgroundColor: '#2196F3' }]}
+                        onPress={() => router.push("/loginScreen" as any)}
+                    >
+                        <Text style={styles.buttonText}>進入 登入畫面 Demo (包含 useEffect 教學)</Text>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={styles.menuSection}>
                     <Text style={styles.sectionLabel}>📚 每週練習題</Text>
-                    <Link href={"/exercise1" as any} asChild>
-                        <TouchableOpacity style={[styles.button, { backgroundColor: '#FF6347' }]}>
-                            <Text style={styles.buttonText}>🌟 進入練習題 1: Flexbox 第一張名片</Text>
-                        </TouchableOpacity>
-                    </Link>
+                    <TouchableOpacity
+                        style={[styles.button, { backgroundColor: '#FF6347' }]}
+                        onPress={() => router.push("/exercise1" as any)}
+                    >
+                        <Text style={styles.buttonText}>🌟 進入練習題 1: Flexbox 第一張名片</Text>
+                    </TouchableOpacity>
                 </View>
 
             </View>
@@ -78,6 +81,7 @@ const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 10,
         alignItems: 'center',
+        backgroundColor: 'black',
     },
     buttonText: {
         color: 'white',
