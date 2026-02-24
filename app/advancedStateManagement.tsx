@@ -26,7 +26,10 @@ const ThemeConsumerComponent = () => {
 // ==========================================
 // useReducer 示範：購物車狀態
 // ==========================================
-type CartState = { count: number; total: number };
+type CartState = {
+    count: number;
+    total: number
+};
 type CartAction =
     | { type: 'ADD_ITEM'; price: number }
     | { type: 'REMOVE_ITEM'; price: number }
@@ -86,7 +89,10 @@ export default function AdvancedStateManagementScreen() {
                 <View style={styles.demoBox}>
                     <Text style={styles.demoText}>
                         <Text style={{ fontWeight: 'bold' }}>• Context：</Text>
-                        當主題、語系、登入狀態等資料需要提供給深層子元件時，使用 <Text style={styles.codeText}>createContext</Text> 與 <Text style={styles.codeText}>{"<Context.Provider>"}</Text> 包覆外層，子代深處元件就能直接呼叫 <Text style={styles.codeText}>useContext()</Text> 拿資料，不用透過層層 Props 接力傳遞。
+                        當主題、語系、登入狀態等資料需要提供給深層子元件時，使用
+                        <Text style={styles.codeText}>createContext</Text> 與
+                        <Text style={styles.codeText}>{"<Context.Provider>"}</Text> 包覆外層，子代深處元件就能直接呼叫
+                        <Text style={styles.codeText}>useContext()</Text> 拿資料，不用透過層層 Props 接力傳遞。
                     </Text>
                 </View>
 
