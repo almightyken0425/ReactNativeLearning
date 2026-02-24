@@ -1,5 +1,6 @@
 import { router } from 'expo-router';
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function IndexMenu() {
     return (
@@ -12,34 +13,59 @@ export default function IndexMenu() {
                     {/* TS 理論註解 4: as any */}
                     {/* Expo Router 對型別非常龜毛，如果它還沒爬完本地目錄建好路徑型別，就會報錯說 href 不合法。 */}
                     {/* 所以在這個 href 我們加上 'as any' 來暫時繞過嚴格的路由型別檢查。 */}
-                    <TouchableOpacity
-                        style={[styles.button, { backgroundColor: '#4CAF50', marginBottom: 15 }]}
-                        onPress={() => router.push("/expenseTracker" as any)}
-                    >
-                        <Text style={styles.buttonText}>進入 記帳本 Demo (包含 TS 修正註解)</Text>
-                    </TouchableOpacity>
-
-                    {/* 新增: 登入頁面與 useEffect 教學 */}
-                    <TouchableOpacity
-                        style={[styles.button, { backgroundColor: '#2196F3' }]}
-                        onPress={() => router.push("/loginScreen" as any)}
-                    >
-                        <Text style={styles.buttonText}>進入 登入畫面 Demo (包含 useEffect 教學)</Text>
-                    </TouchableOpacity>
+                    <Text style={{ color: '#666', marginBottom: 15, fontStyle: 'italic', textAlign: 'center' }}>持續擴增中...</Text>
                 </View>
 
                 <View style={styles.menuSection}>
-                    <Text style={styles.sectionLabel}>📚 每週練習題</Text>
+                    <Text style={styles.sectionLabel}>📚 每週練習題與百科</Text>
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: '#FF6347' }]}
-                        onPress={() => router.push("/exercise1" as any)}
+                        style={[styles.button, { backgroundColor: '#FF6347', marginBottom: 15 }]}
+                        onPress={() => router.push("/flexboxProfileCard" as any)}
                     >
-                        <Text style={styles.buttonText}>🌟 進入練習題 1: Flexbox 第一張名片</Text>
+                        <Text style={styles.buttonText}>🌟 Flexbox 名片排版實戰</Text>
                     </TouchableOpacity>
-                </View>
 
-            </View>
-        </SafeAreaView>
+                    {/* 新增 Exercise 2 */}
+                    <TouchableOpacity
+                        style={[styles.button, { backgroundColor: '#E91E63', marginBottom: 15 }]}
+                        onPress={() => router.push("/componentDataFlow" as any)}
+                    >
+                        <Text style={styles.buttonText}>🧩 元件化與資料百科演練</Text>
+                    </TouchableOpacity>
+
+                    {/* 新增 Exercise 3 */}
+                    <TouchableOpacity
+                        style={[styles.button, { backgroundColor: '#9C27B0', marginBottom: 15 }]}
+                        onPress={() => router.push("/typeVsInterface" as any)}
+                    >
+                        <Text style={styles.buttonText}>🛡️ Type 與 Interface 型別演練</Text>
+                    </TouchableOpacity>
+
+                    {/* 百科系列 */}
+                    <TouchableOpacity
+                        style={[styles.button, { backgroundColor: '#2196F3', marginBottom: 15 }]}
+                        onPress={() => router.push("/stateAndEffectForm" as any)}
+                    >
+                        <Text style={styles.buttonText}>📖 狀態管理與副作用週期百科</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={[styles.button, { backgroundColor: '#4CAF50', marginBottom: 15 }]}
+                        onPress={() => router.push("/arrayStateAndStorage" as any)}
+                    >
+                        <Text style={styles.buttonText}>📖 陣列操作與資料持久化百科</Text>
+                    </TouchableOpacity >
+
+                    <TouchableOpacity
+                        style={[styles.button, { backgroundColor: '#9C27B0' }]}
+                        onPress={() => router.push("/advancedStateManagement" as any)}
+                    >
+                        <Text style={styles.buttonText}>📖 進階狀態管理百科</Text>
+                    </TouchableOpacity >
+                </View >
+
+            </View >
+        </SafeAreaView >
     );
 }
 
