@@ -8,9 +8,8 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function StateAndEffectFormScreen() {
+export default function DemoUseEffectScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
@@ -39,22 +38,11 @@ export default function StateAndEffectFormScreen() {
     }, [email, password]);
 
     return (
-        <SafeAreaView style={styles.safeArea}>
+        <View style={styles.safeArea}>
             <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 50 }}>
-                <Text style={styles.headerTitle}>狀態與副作用百科</Text>
-
                 {/* =======================================================
-                    💡 百科全書解說區
+                    💡 副作用解說區
                 ======================================================= */}
-                <Text style={styles.sectionTitle}>💡 useState 雙向綁定</Text>
-                <View style={styles.demoBox}>
-                    <Text style={styles.demoText}>
-                        <Text style={{ fontWeight: 'bold' }}>• 狀態追蹤：</Text>
-                        我們使用 <Text style={styles.codeText}>useState</Text> 來儲存使用者輸入的 Email 與 Password。
-                        透過 TextInput 的 <Text style={styles.codeText}>value</Text> 屬性與 <Text style={styles.codeText}>onChangeText</Text> 函式達成值的雙向同步。
-                    </Text>
-                </View>
-
                 <Text style={styles.sectionTitle}>💡 useEffect 副作用檢測</Text>
                 <View style={styles.demoBox}>
                     <Text style={styles.demoText}>
@@ -104,7 +92,7 @@ export default function StateAndEffectFormScreen() {
                     </TouchableOpacity>
                 </View>
             </ScrollView>
-        </SafeAreaView>
+        </View>
     );
 }
 
@@ -117,18 +105,10 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
     },
-    headerTitle: {
-        fontSize: 22,
-        fontWeight: 'bold',
-        marginTop: 20,
-        marginBottom: 20,
-        textAlign: 'center',
-        color: '#333'
-    },
     sectionTitle: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#007AFF', // iOS 藍色風格
+        color: '#FF9800',
         marginTop: 10,
         marginBottom: 15,
     },
@@ -200,7 +180,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
     },
     button: {
-        backgroundColor: '#007AFF', // 亮藍色
+        backgroundColor: '#FF9800', // 注意我改成橘色搭配 useEffect
         height: 50,
         borderRadius: 8,
         justifyContent: 'center',

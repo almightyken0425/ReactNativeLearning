@@ -9,7 +9,6 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function ArrayStateAndStorageScreen() {
     // 💡 TS 教學註解: 明確定義泛型
@@ -59,7 +58,7 @@ export default function ArrayStateAndStorageScreen() {
     };
 
     return (
-        <SafeAreaView style={styles.safeArea}>
+        <View style={styles.safeArea}>
             <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 50 }}>
                 <Text style={styles.headerTitle}>百科 5: 陣列狀態與持久化</Text>
 
@@ -159,7 +158,7 @@ export default function ArrayStateAndStorageScreen() {
                 </View>
 
             </ScrollView>
-        </SafeAreaView>
+        </View>
     );
 }
 

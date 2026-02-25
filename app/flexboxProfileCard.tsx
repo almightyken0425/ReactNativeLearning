@@ -1,10 +1,9 @@
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function FlexboxProfileCardScreen() {
     return (
-        <SafeAreaView style={styles.safeArea}>
+        <View style={styles.safeArea}>
             <Text style={styles.headerTitle}>進階 Flexbox 版面大全</Text>
             <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 50 }}>
 
@@ -106,7 +105,7 @@ export default function FlexboxProfileCardScreen() {
                 </View>
 
             </ScrollView>
-        </SafeAreaView>
+        </View>
     );
 }
 

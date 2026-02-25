@@ -1,6 +1,5 @@
 import React from 'react';
 import { Alert, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 // ==========================================
 // 💡 百科全書示範區: 各種 Props 屬性傳遞寫法
@@ -116,7 +115,7 @@ export default function ComponentDataFlowScreen() {
     };
 
     return (
-        <SafeAreaView style={styles.safeArea}>
+        <View style={styles.safeArea}>
             <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 50 }}>
                 <Text style={styles.headerTitle}>練習題 2: 元件化與資料百科</Text>
 
@@ -172,7 +171,7 @@ export default function ComponentDataFlowScreen() {
                 </View>
 
             </ScrollView>
-        </SafeAreaView>
+        </View>
     );
 }
 

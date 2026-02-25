@@ -1,6 +1,5 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 // ==========================================
 // 💡 百科全書示範區: TypeScript Type vs Interface
@@ -75,7 +74,7 @@ const ProfileBadge = (props: UserProfile) => {
 
 export default function TypeVsInterfaceScreen() {
     return (
-        <SafeAreaView style={styles.safeArea}>
+        <View style={styles.safeArea}>
             <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 50 }}>
                 <Text style={styles.headerTitle}>型別系統演練 Type 與 Interface 比較</Text>
 
@@ -113,7 +112,7 @@ export default function TypeVsInterfaceScreen() {
                 </View>
 
             </ScrollView>
-        </SafeAreaView>
+        </View>
     );
 }
 
