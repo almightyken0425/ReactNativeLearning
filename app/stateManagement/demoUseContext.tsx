@@ -60,33 +60,33 @@ export default function SettingsScreen() {
 
 const styles = StyleSheet.create({
     safeArea: { flex: 1 },
-    lightBg: { backgroundColor: '#eef2f5' },
+    lightBg: { backgroundColor: '#F9F8F4' },
     darkBg: { backgroundColor: '#121212' },
 
-    lightText: { color: '#333' },
+    lightText: { color: '#2C3E50' },
     darkText: { color: '#fff' },
-    lightDesc: { color: '#666' },
+    lightDesc: { color: '#7F8C8D' },
     darkDesc: { color: '#aaa' },
     container: { flex: 1, padding: 20 },
     card: {
         padding: 20,
         borderRadius: 12,
-        shadowColor: '#000',
+        shadowColor: '#8B7355',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
         elevation: 3,
     },
-    lightCard: { backgroundColor: '#fff' },
+    lightCard: { backgroundColor: '#FFFFFF' },
     darkCard: { backgroundColor: '#1e1e1e' },
     cardTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 10 },
     desc: { fontSize: 14, lineHeight: 22, marginBottom: 20 },
     row: { flexDirection: 'row', justifyContent: 'space-between', gap: 10 },
     optionBtn: { flex: 1, paddingVertical: 12, borderRadius: 8, alignItems: 'center' },
-    inactiveBtn: { backgroundColor: 'rgba(150,150,150,0.1)' },
-    activeLight: { backgroundColor: '#007AFF' },
+    inactiveBtn: { backgroundColor: '#EAE6DF' },
+    activeLight: { backgroundColor: '#8B7355' },
     activeDark: { backgroundColor: '#BB86FC' },
     optionText: { fontSize: 16, fontWeight: '600' },
     activeText: { color: '#fff' },
-    inactiveText: { color: '#888' }
+    inactiveText: { color: '#95A5A6' }
 });

@@ -99,7 +99,7 @@ export default function DemoUseEffectScreen() {
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        backgroundColor: '#eef2f5',
+        backgroundColor: '#F9F8F4',
     },
     container: {
         flex: 1,
@@ -108,16 +108,16 @@ const styles = StyleSheet.create({
     sectionTitle: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#FF9800',
+        color: '#8B7355',
         marginTop: 10,
         marginBottom: 15,
     },
     demoBox: {
-        backgroundColor: '#fff',
+        backgroundColor: '#FFFFFF',
         padding: 15,
         borderRadius: 12,
         marginBottom: 25,
-        shadowColor: '#000',
+        shadowColor: '#8B7355',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
@@ -125,22 +125,22 @@ const styles = StyleSheet.create({
     },
     demoText: {
         fontSize: 14,
-        color: '#555',
+        color: '#7F8C8D',
         lineHeight: 22,
     },
     codeText: {
         fontFamily: 'monospace',
-        backgroundColor: '#f0f0f0',
+        backgroundColor: '#F5F5F3',
         paddingHorizontal: 4,
         borderRadius: 4,
-        color: '#E91E63',
+        color: '#8B7355',
     },
     exerciseBox: {
-        backgroundColor: '#fff',
+        backgroundColor: '#FFFFFF',
         padding: 20,
         borderRadius: 12,
         minHeight: 200,
-        shadowColor: '#000',
+        shadowColor: '#8B7355',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
@@ -151,23 +151,23 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 25,
         textAlign: 'center',
-        color: '#333',
+        color: '#2C3E50',
     },
     label: {
         marginBottom: 5,
         fontSize: 16,
-        color: '#666',
+        color: '#95A5A6',
         fontWeight: '600',
     },
     input: {
         height: 50,
-        borderColor: '#ddd',
+        borderColor: '#EAE6DF',
         borderWidth: 1,
         borderRadius: 8,
         paddingHorizontal: 15,
         marginBottom: 10,
         fontSize: 16,
-        backgroundColor: '#fafafa',
+        backgroundColor: '#F9F8F4',
     },
     inputError: {
         borderColor: '#ff4d4f', // 錯誤時邊框變紅
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
     },
     button: {
-        backgroundColor: '#FF9800', // 注意我改成橘色搭配 useEffect
+        backgroundColor: '#8B7355',
         height: 50,
         borderRadius: 8,
         justifyContent: 'center',
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     disabledButton: {
-        backgroundColor: '#ccc', // 灰色
+        backgroundColor: '#D4C4B7',
     },
     buttonText: {
         color: 'white',

@@ -55,8 +55,8 @@ export default function AdvancedStateManagementScreen() {
                         點擊下方按鈕，了解如何透過狀態讓畫面隨之產生變化。
                     </Text>
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#007AFF' : '#007AFF' }]}
-                        onPress={() => router.push("/advancedStateManagement/demoUseState" as any)}
+                        style={[styles.button, { backgroundColor: isDark ? '#007AFF' : '#8B7355' }]}
+                        onPress={() => router.push("/stateManagement/demoUseState" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 useState 範例</Text>
                     </TouchableOpacity>
@@ -72,8 +72,8 @@ export default function AdvancedStateManagementScreen() {
                         當特定資料改變時，我們可能需要做額外的「檢查」或「呼叫 API」。這時候就可以使用 <Text style={styles.codeText}>useEffect</Text> 來監聽變化，讓他自動發動攻擊！
                     </Text>
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#FF9800' : '#FF9800' }]}
-                        onPress={() => router.push("/advancedStateManagement/demoUseEffect" as any)}
+                        style={[styles.button, { backgroundColor: isDark ? '#FF9800' : '#8B7355' }]}
+                        onPress={() => router.push("/stateManagement/demoUseEffect" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 useEffect 範例</Text>
                     </TouchableOpacity>
@@ -104,8 +104,8 @@ export default function AdvancedStateManagementScreen() {
                         修改完按返回時，你會發現這個首頁已經**瞬間變色**，不需要寫任何額外的監聽邏輯！
                     </Text>
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#BB86FC' : '#9C27B0' }]}
-                        onPress={() => router.push("/advancedStateManagement/demoUseContext" as any)}
+                        style={[styles.button, { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }]}
+                        onPress={() => router.push("/stateManagement/demoUseContext" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往設定頁切換主題</Text>
                     </TouchableOpacity>
@@ -123,8 +123,8 @@ export default function AdvancedStateManagementScreen() {
                         我們將這個較為複雜的觀念獨立成了一個專屬的畫面，點擊下方按鈕前往查看 useReducer 的購物車範例吧！
                     </Text>
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#BB86FC' : '#9C27B0' }]}
-                        onPress={() => router.push("/advancedStateManagement/demoUseReducer" as any)}
+                        style={[styles.button, { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }]}
+                        onPress={() => router.push("/stateManagement/demoUseReducer" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 useReducer 範例</Text>
                     </TouchableOpacity>
@@ -139,10 +139,61 @@ export default function AdvancedStateManagementScreen() {
                         我們將自訂鉤子的觀念獨立成了一個專屬的畫面，點擊下方按鈕前往查看 Custom Hook 的計數器範例吧！
                     </Text>
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#BB86FC' : '#9C27B0' }]}
-                        onPress={() => router.push("/advancedStateManagement/demoUseCustomHook" as any)}
+                        style={[styles.button, { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }]}
+                        onPress={() => router.push("/stateManagement/demoUseCustomHook" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 Custom Hook 範例</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* =======================================================
+                    💡 useMemo：記憶高耗時運算
+                ======================================================= */}
+                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 useMemo：記憶耗時運算</Text>
+                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
+                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
+                        當元件重新渲染時，某些複雜的數學運算或巨量陣列過濾若跟著重跑會導致畫面嚴重卡頓。
+                        透過 <Text style={styles.codeText}>useMemo</Text> 可以將運算結果「快取」起來，只要依賴的值沒變，就不會浪費效能重新計算。
+                    </Text>
+                    <TouchableOpacity
+                        style={[styles.button, { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }]}
+                        onPress={() => router.push("/stateManagement/demoUseMemo" as any)}
+                    >
+                        <Text style={styles.buttonText}>➡ 前往 useMemo 範例</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* =======================================================
+                    💡 useCallback：穩定函式參考
+                ======================================================= */}
+                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 useCallback：穩定函式參考</Text>
+                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
+                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
+                        每次元件重新渲染時，裡面的函式都會被「重新宣告」並分配新的記憶體位址。
+                        若將這些函式傳遞給子元件，將會破壞防護罩導致子元件必定重繪。<Text style={styles.codeText}>useCallback</Text> 能幫你鎖死函式參考，避免無謂的連鎖渲染。
+                    </Text>
+                    <TouchableOpacity
+                        style={[styles.button, { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }]}
+                        onPress={() => router.push("/stateManagement/demoUseCallback" as any)}
+                    >
+                        <Text style={styles.buttonText}>➡ 前往 useCallback 範例</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* =======================================================
+                    💡 React.memo：阻擋無謂渲染
+                ======================================================= */}
+                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 React.memo：子元件防護罩</Text>
+                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
+                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
+                        當父元件狀態更新時，預設底下所有的子孫元件都會跟著重新渲染。
+                        透過 <Text style={styles.codeText}>React.memo</Text> 將子元件包裝起來，它就會自動比對收到的 Props 有無改變，沒有改變就強制跳過渲染！
+                    </Text>
+                    <TouchableOpacity
+                        style={[styles.button, { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }]}
+                        onPress={() => router.push("/stateManagement/demoReactMemo" as any)}
+                    >
+                        <Text style={styles.buttonText}>➡ 前往 React.memo 範例</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -153,22 +204,22 @@ export default function AdvancedStateManagementScreen() {
 
 const styles = StyleSheet.create({
     safeArea: { flex: 1 },
-    lightBg: { backgroundColor: '#eef2f5' },
+    lightBg: { backgroundColor: '#F9F8F4' },
     darkBg: { backgroundColor: '#121212' },
     container: { flex: 1, padding: 20 },
     headerTitle: { fontSize: 24, fontWeight: 'bold', marginVertical: 20, textAlign: 'center' },
-    lightText: { color: '#333' },
+    lightText: { color: '#2C3E50' },
     darkText: { color: '#fff' },
     sectionTitle: { fontSize: 18, fontWeight: 'bold', marginTop: 10, marginBottom: 15 },
-    lightAccent: { color: '#007AFF' },
+    lightAccent: { color: '#8B7355' },
     darkAccent: { color: '#BB86FC' },
-    demoBox: { padding: 20, borderRadius: 12, marginBottom: 25, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 4, elevation: 3 },
-    lightCard: { backgroundColor: '#fff' },
+    demoBox: { padding: 20, borderRadius: 12, marginBottom: 25, shadowColor: '#8B7355', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 4, elevation: 3 },
+    lightCard: { backgroundColor: '#FFFFFF' },
     darkCard: { backgroundColor: '#1e1e1e' },
     demoText: { fontSize: 14, lineHeight: 22 },
-    lightDesc: { color: '#555' },
+    lightDesc: { color: '#7F8C8D' },
     darkDesc: { color: '#aaa' },
-    codeText: { fontFamily: 'monospace', backgroundColor: 'rgba(150,150,150,0.2)', paddingHorizontal: 4, borderRadius: 4, color: '#E91E63' },
+    codeText: { fontFamily: 'monospace', backgroundColor: '#F5F5F3', paddingHorizontal: 4, borderRadius: 4, color: '#8B7355' },
     dataText: { fontSize: 20, fontWeight: 'bold', textAlign: 'center', marginBottom: 10 },
     button: { height: 50, borderRadius: 8, justifyContent: 'center', alignItems: 'center', marginTop: 15 },
     buttonText: { color: 'white', fontSize: 16, fontWeight: 'bold' },

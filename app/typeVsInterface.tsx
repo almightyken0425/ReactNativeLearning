@@ -119,7 +119,7 @@ export default function TypeVsInterfaceScreen() {
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        backgroundColor: '#eef2f5',
+        backgroundColor: '#F9F8F4',
     },
     container: {
         flex: 1,
@@ -131,12 +131,12 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 20,
         textAlign: 'center',
-        color: '#333'
+        color: '#2C3E50'
     },
     sectionTitle: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#007AFF', // iOS 藍色風格
+        color: '#8B7355', // 百科全書主題色
         marginTop: 10,
         marginBottom: 15,
     },
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 12,
         marginBottom: 25,
-        shadowColor: '#000',
+        shadowColor: '#8B7355',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
@@ -154,13 +154,13 @@ const styles = StyleSheet.create({
     demoLabel: {
         fontSize: 14,
         fontWeight: '600',
-        color: '#555',
+        color: '#8B7355',
         marginTop: 10,
         marginBottom: 4,
     },
     demoText: {
         fontSize: 14,
-        color: '#777',
+        color: '#7F8C8D',
         marginBottom: 10,
         lineHeight: 20,
     },
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 12,
         minHeight: 200,
-        shadowColor: '#000',
+        shadowColor: '#8B7355',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
@@ -178,17 +178,17 @@ const styles = StyleSheet.create({
     hintText: {
         textAlign: 'center',
         padding: 20,
-        color: '#aaa',
+        color: '#95A5A6',
         fontStyle: 'italic',
         lineHeight: 24,
     },
     badgeContainer: {
         borderWidth: 1,
-        borderColor: '#ddd',
+        borderColor: '#EAE6DF',
         padding: 15,
         marginBottom: 10,
         borderRadius: 8,
-        backgroundColor: '#fafafa',
+        backgroundColor: '#FFFFFF',
     },
     badgeName: {
         fontSize: 16,
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     roleTag: {
-        backgroundColor: '#007AFF',
+        backgroundColor: '#8B7355',
         alignSelf: 'flex-start',
         paddingHorizontal: 8,
         paddingVertical: 3,

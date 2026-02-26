@@ -6,7 +6,7 @@ export default function AdvancedStateManagementLayout() {
     // ==========================================
     // 🌍 最頂層的資料主機 (真正的狀態存放地)
     // ==========================================
-    // 整個 advancedStateManagement 資料夾底下所有的畫面，都會以這裡為頂點
+    // 整個 stateManagement 資料夾底下所有的畫面，都會以這裡為頂點
     // 只要這裡的 theme 改變，所有用 useContext 收到廣播的子畫面，都會在同一個瞬間重新渲染
     const [theme, setTheme] = useState<ThemeType>('light');
 

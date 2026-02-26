@@ -30,7 +30,7 @@ export default function CustomHookDemoScreen() {
                         <View style={{ width: 10 }} />
                         <TouchableOpacity style={[styles.actionBtn, styles.flex1]} onPress={counter.decrement}><Text style={styles.buttonText}>- 減</Text></TouchableOpacity>
                         <View style={{ width: 10 }} />
-                        <TouchableOpacity style={[styles.actionBtn, styles.flex1, { backgroundColor: '#9E9E9E' }]} onPress={counter.reset}><Text style={styles.buttonText}>重置</Text></TouchableOpacity>
+                        <TouchableOpacity style={[styles.actionBtn, styles.flex1, { backgroundColor: '#D4C4B7' }]} onPress={counter.reset}><Text style={styles.buttonText}>重置</Text></TouchableOpacity>
                     </View>
                 </View>
 
@@ -41,23 +41,23 @@ export default function CustomHookDemoScreen() {
 
 const styles = StyleSheet.create({
     safeArea: { flex: 1 },
-    lightBg: { backgroundColor: '#eef2f5' },
+    lightBg: { backgroundColor: '#F9F8F4' },
     darkBg: { backgroundColor: '#121212' },
     container: { flex: 1, padding: 20 },
-    lightText: { color: '#333' },
+    lightText: { color: '#2C3E50' },
     darkText: { color: '#fff' },
     sectionTitle: { fontSize: 18, fontWeight: 'bold', marginTop: 10, marginBottom: 15 },
-    lightAccent: { color: '#007AFF' },
+    lightAccent: { color: '#8B7355' },
     darkAccent: { color: '#BB86FC' },
-    demoBox: { padding: 20, borderRadius: 12, marginBottom: 25, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 4, elevation: 3 },
-    lightCard: { backgroundColor: '#fff' },
+    demoBox: { padding: 20, borderRadius: 12, marginBottom: 25, shadowColor: '#8B7355', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 4, elevation: 3 },
+    lightCard: { backgroundColor: '#FFFFFF' },
     darkCard: { backgroundColor: '#1e1e1e' },
     demoText: { fontSize: 14, lineHeight: 22 },
-    lightDesc: { color: '#555' },
+    lightDesc: { color: '#7F8C8D' },
     darkDesc: { color: '#aaa' },
-    codeText: { fontFamily: 'monospace', backgroundColor: 'rgba(150,150,150,0.2)', paddingHorizontal: 4, borderRadius: 4, color: '#E91E63' },
+    codeText: { fontFamily: 'monospace', backgroundColor: '#F5F5F3', paddingHorizontal: 4, borderRadius: 4, color: '#8B7355' },
     dataText: { fontSize: 20, fontWeight: 'bold', textAlign: 'center', marginBottom: 10 },
-    actionBtn: { height: 40, borderRadius: 8, justifyContent: 'center', alignItems: 'center', backgroundColor: '#007AFF' },
+    actionBtn: { height: 40, borderRadius: 8, justifyContent: 'center', alignItems: 'center', backgroundColor: '#8B7355' },
     buttonText: { color: 'white', fontSize: 16, fontWeight: 'bold' },
     row: { flexDirection: 'row', justifyContent: 'space-between' },
     flex1: { flex: 1 }

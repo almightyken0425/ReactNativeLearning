@@ -1,108 +1,138 @@
 import { router } from 'expo-router';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function IndexMenu() {
     return (
-        <View style={styles.safeArea}>
+        <ScrollView style={styles.safeArea} contentContainerStyle={styles.scrollContent}>
             <View style={styles.container}>
-                <Text style={styles.headerTitle}>React Native 學習導覽</Text>
-
                 <View style={styles.menuSection}>
-                    <Text style={styles.sectionLabel}>📚 每週練習題與百科</Text>
-                    <TouchableOpacity
-                        style={[styles.button, { backgroundColor: '#FF6347', marginBottom: 15 }]}
-                        onPress={() => router.push("/flexboxProfileCard" as any)}
-                    >
-                        <Text style={styles.buttonText}>🌟 Flexbox 名片排版實戰</Text>
+                    <View style={styles.sectionHeader}>
+                        <Text style={styles.sectionLabel}>目錄 CONTENTS</Text>
+                        <View style={styles.divider} />
+                    </View>
+
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/flexboxProfileCard" as any)}>
+                        <Text style={styles.chapterNumber}>01</Text>
+                        <View style={styles.chapterContent}>
+                            <Text style={styles.chapterTitle}>Flexbox 名片排版</Text>
+                            <Text style={styles.chapterDesc}>基礎排版實戰</Text>
+                        </View>
+                        <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>
 
-                    {/* 新增 Exercise 2 */}
-                    <TouchableOpacity
-                        style={[styles.button, { backgroundColor: '#E91E63', marginBottom: 15 }]}
-                        onPress={() => router.push("/componentDataFlow" as any)}
-                    >
-                        <Text style={styles.buttonText}>🧩 元件化與資料百科演練</Text>
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/componentDataFlow" as any)}>
+                        <Text style={styles.chapterNumber}>02</Text>
+                        <View style={styles.chapterContent}>
+                            <Text style={styles.chapterTitle}>元件化與資料</Text>
+                            <Text style={styles.chapterDesc}>元件溝通與資料流百科</Text>
+                        </View>
+                        <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>
 
-                    {/* 新增 Exercise 3 */}
-                    <TouchableOpacity
-                        style={[styles.button, { backgroundColor: '#9C27B0', marginBottom: 15 }]}
-                        onPress={() => router.push("/typeVsInterface" as any)}
-                    >
-                        <Text style={styles.buttonText}>🛡️ Type 與 Interface 型別演練</Text>
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/typeVsInterface" as any)}>
+                        <Text style={styles.chapterNumber}>03</Text>
+                        <View style={styles.chapterContent}>
+                            <Text style={styles.chapterTitle}>Type 與 Interface</Text>
+                            <Text style={styles.chapterDesc}>TypeScript 型別演練</Text>
+                        </View>
+                        <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>
 
-                    {/* 百科系列 */}
-                    <TouchableOpacity
-                        style={[styles.button, { backgroundColor: '#2196F3', marginBottom: 15 }]}
-                        onPress={() => router.push("/stateAndEffectForm/main" as any)}
-                    >
-                        <Text style={styles.buttonText}>📖 狀態管理與副作用週期百科</Text>
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/arrayStateAndStorage" as any)}>
+                        <Text style={styles.chapterNumber}>04</Text>
+                        <View style={styles.chapterContent}>
+                            <Text style={styles.chapterTitle}>陣列操作與資料持久化</Text>
+                            <Text style={styles.chapterDesc}>應用狀態儲存百科</Text>
+                        </View>
+                        <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity
-                        style={[styles.button, { backgroundColor: '#4CAF50', marginBottom: 15 }]}
-                        onPress={() => router.push("/arrayStateAndStorage" as any)}
-                    >
-                        <Text style={styles.buttonText}>📖 陣列操作與資料持久化百科</Text>
-                    </TouchableOpacity >
-
-                    <TouchableOpacity
-                        style={[styles.button, { backgroundColor: '#9C27B0' }]}
-                        onPress={() => router.push("/advancedStateManagement/main" as any)}
-                    >
-                        <Text style={styles.buttonText}>📖 進階狀態管理百科</Text>
-                    </TouchableOpacity >
-                </View >
-
-            </View >
-        </View >
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/stateManagement/main" as any)}>
+                        <Text style={styles.chapterNumber}>05</Text>
+                        <View style={styles.chapterContent}>
+                            <Text style={styles.chapterTitle}>狀態管理</Text>
+                            <Text style={styles.chapterDesc}>進階全局狀態百科</Text>
+                        </View>
+                        <Text style={styles.arrow}>›</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#F9F8F4',
+    },
+    scrollContent: {
+        flexGrow: 1,
+        paddingBottom: 40,
     },
     container: {
         flex: 1,
-        padding: 20,
-        justifyContent: 'center',
-    },
-    headerTitle: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginBottom: 40,
-        color: '#333'
+        padding: 24,
     },
     menuSection: {
-        marginBottom: 30,
-        backgroundColor: '#fff',
-        padding: 20,
-        borderRadius: 15,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
-        elevation: 3,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 8,
+        padding: 24,
+        shadowColor: '#8B7355',
+        shadowOffset: { width: 0, height: 8 },
+        shadowOpacity: 0.08,
+        shadowRadius: 24,
+        elevation: 4,
+        borderWidth: 1,
+        borderColor: '#EAE6DF',
+    },
+    sectionHeader: {
+        marginBottom: 16,
     },
     sectionLabel: {
-        fontSize: 18,
-        fontWeight: '600',
-        marginBottom: 15,
-        color: '#555',
+        fontSize: 14,
+        fontWeight: '700',
+        color: '#8B7355',
+        letterSpacing: 3,
+        marginBottom: 12,
     },
-    button: {
-        padding: 15,
-        borderRadius: 10,
+    divider: {
+        height: 2,
+        backgroundColor: '#F0EFEB',
+        width: '100%',
+    },
+    chapterButton: {
+        flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: 'black',
+        paddingVertical: 18,
+        borderBottomWidth: 1,
+        borderBottomColor: '#F5F5F3',
     },
-    buttonText: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 16,
+    chapterNumber: {
+        fontSize: 28,
+        fontWeight: '300',
+        color: '#D4C4B7',
+        width: 48,
+        fontFamily: 'serif',
+    },
+    chapterContent: {
+        flex: 1,
+        justifyContent: 'center',
+        paddingRight: 16,
+    },
+    chapterTitle: {
+        fontSize: 17,
+        fontWeight: '600',
+        color: '#34495E',
+        marginBottom: 6,
+    },
+    chapterDesc: {
+        fontSize: 14,
+        color: '#95A5A6',
+    },
+    arrow: {
+        fontSize: 24,
+        fontWeight: '300',
+        color: '#D4C4B7',
     },
 });

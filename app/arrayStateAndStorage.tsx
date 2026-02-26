@@ -165,7 +165,7 @@ export default function ArrayStateAndStorageScreen() {
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        backgroundColor: '#eef2f5',
+        backgroundColor: '#F9F8F4',
     },
     container: {
         flex: 1,
@@ -177,12 +177,12 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 20,
         textAlign: 'center',
-        color: '#333'
+        color: '#2C3E50'
     },
     sectionTitle: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#007AFF', // iOS 藍色風格
+        color: '#8B7355', // 百科全書主題色
         marginTop: 10,
         marginBottom: 15,
     },
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 12,
         marginBottom: 25,
-        shadowColor: '#000',
+        shadowColor: '#8B7355',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
@@ -199,22 +199,22 @@ const styles = StyleSheet.create({
     },
     demoText: {
         fontSize: 14,
-        color: '#555',
+        color: '#7F8C8D',
         lineHeight: 22,
     },
     codeText: {
         fontFamily: 'monospace',
-        backgroundColor: '#f0f0f0',
+        backgroundColor: '#F5F5F3',
         paddingHorizontal: 4,
         borderRadius: 4,
-        color: '#E91E63',
+        color: '#8B7355',
     },
     exerciseBox: {
         backgroundColor: '#fff',
         padding: 20,
         borderRadius: 12,
         minHeight: 300,
-        shadowColor: '#000',
+        shadowColor: '#8B7355',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
@@ -225,10 +225,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 20,
-        color: '#333',
+        color: '#2C3E50',
     },
     button: {
-        backgroundColor: '#4CAF50',
+        backgroundColor: '#8B7355',
         height: 50,
         borderRadius: 8,
         alignItems: 'center',
@@ -241,11 +241,11 @@ const styles = StyleSheet.create({
     },
     textInput: {
         height: 50,
-        borderColor: '#ddd',
+        borderColor: '#EAE6DF',
         borderWidth: 1,
         marginBottom: 15,
         paddingHorizontal: 15,
-        backgroundColor: '#fafafa',
+        backgroundColor: '#F9F8F4',
         borderRadius: 8,
         fontSize: 16,
     },
@@ -259,18 +259,18 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         marginBottom: 10,
-        color: '#555',
+        color: '#8B7355',
     },
     listItem: {
-        backgroundColor: '#FFEB3B', // 將原先的黃色保留
+        backgroundColor: '#F5F5F3',
         padding: 15,
-        marginVertical: 6,
+        marginVertical: 8,
         borderRadius: 8,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         // 淡淡的陰影
-        shadowColor: '#000',
+        shadowColor: '#8B7355',
         shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.1,
         shadowRadius: 2,
@@ -279,10 +279,10 @@ const styles = StyleSheet.create({
     listItemText: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#333',
+        color: '#34495E',
     },
     listItemHint: {
         fontSize: 12,
-        color: '#888',
+        color: '#95A5A6',
     }
 });

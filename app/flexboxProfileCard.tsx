@@ -112,7 +112,7 @@ export default function FlexboxProfileCardScreen() {
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
-        backgroundColor: '#eef2f5',
+        backgroundColor: '#F9F8F4',
     },
     container: {
         flex: 1,
@@ -124,18 +124,18 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 10,
         textAlign: 'center',
-        color: '#333',
+        color: '#2C3E50',
     },
     description: {
         fontSize: 14,
-        color: '#666',
+        color: '#7F8C8D',
         marginBottom: 20,
         lineHeight: 20,
     },
     sectionTitle: {
         fontSize: 14,
         fontWeight: 'bold',
-        color: '#007AFF', // iOS 藍色風格
+        color: '#8B7355', // 百科全書主題色
         marginTop: 15,
         marginBottom: 8,
     },
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         padding: 15,
         borderRadius: 12, // 圓角大一點比較現代
-        shadowColor: '#000',
+        shadowColor: '#8B7355',
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.1,
         shadowRadius: 6,
@@ -162,11 +162,11 @@ const styles = StyleSheet.create({
     nameText: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#333',
+        color: '#34495E',
         marginBottom: 4,
     },
     bioText: {
         fontSize: 14,
-        color: '#666',
+        color: '#95A5A6',
     }
 });
