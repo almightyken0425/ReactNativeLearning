@@ -101,29 +101,116 @@ export default function DemoUseCallbackScreen() {
 }
 
 const styles = StyleSheet.create({
-    safeArea: { flex: 1 },
-    lightBg: { backgroundColor: '#F9F8F4' },
-    darkBg: { backgroundColor: '#121212' },
-    container: { flex: 1, padding: 20 },
-    sectionTitle: { fontSize: 18, fontWeight: 'bold', marginTop: 10, marginBottom: 15 },
-    lightText: { color: '#2C3E50' },
-    darkText: { color: '#E0E0E0' },
-    demoBox: { padding: 15, borderRadius: 12, marginBottom: 20, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 4, elevation: 3 },
-    lightCard: { backgroundColor: '#FFFFFF' },
-    darkCard: { backgroundColor: '#1E1E1E' },
-    demoText: { fontSize: 14, lineHeight: 22 },
-    lightDesc: { color: '#7F8C8D' },
-    darkDesc: { color: '#A0A0A0' },
-    codeText: { fontFamily: 'monospace', backgroundColor: '#F5F5F3', paddingHorizontal: 4, borderRadius: 4, color: '#8B7355' },
-    topControls: { marginBottom: 20, alignItems: 'center' },
-    switchRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-    row: { flexDirection: 'row', gap: 15 },
-    col: { flex: 1, padding: 15, borderRadius: 12, alignItems: 'center', borderWidth: 1, borderColor: 'rgba(0,0,0,0.05)' },
-    label: { fontSize: 13, fontWeight: 'bold', marginBottom: 15, textAlign: 'center' },
-    countText: { fontSize: 24, fontWeight: 'bold', marginBottom: 15 },
-    heavyButton: { paddingVertical: 12, paddingHorizontal: 20, borderRadius: 8, width: '100%', alignItems: 'center' },
-    heavyLight: { backgroundColor: '#EAE6DF' },
-    heavyDark: { backgroundColor: '#333333' },
-    heavyBtnText: { fontWeight: 'bold' },
-    hintBox: { padding: 15, borderRadius: 8, marginTop: 20, backgroundColor: 'rgba(231, 76, 60, 0.1)' }
+    safeArea: {
+        flex: 1
+    },
+    lightBg: {
+        backgroundColor: '#F9F8F4'
+    },
+    darkBg: {
+        backgroundColor: '#121212'
+    },
+    container: {
+        flex: 1,
+        padding: 20
+    },
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginTop: 10,
+        marginBottom: 15
+    },
+    lightText: {
+        color: '#2C3E50'
+    },
+    darkText: {
+        color: '#E0E0E0'
+    },
+    demoBox: {
+        padding: 15,
+        borderRadius: 12,
+        marginBottom: 20,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3
+    },
+    lightCard: {
+        backgroundColor: '#FFFFFF'
+    },
+    darkCard: {
+        backgroundColor: '#1E1E1E'
+    },
+    demoText: {
+        fontSize: 14,
+        lineHeight: 22
+    },
+    lightDesc: {
+        color: '#7F8C8D'
+    },
+    darkDesc: {
+        color: '#A0A0A0'
+    },
+    codeText: {
+        fontFamily: 'monospace',
+        backgroundColor: '#F5F5F3',
+        paddingHorizontal: 4,
+        borderRadius: 4,
+        color: '#8B7355'
+    },
+    topControls: {
+        marginBottom: 20,
+        alignItems: 'center'
+    },
+    switchRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10
+    },
+    row: {
+        flexDirection: 'row',
+        gap: 15
+    },
+    col: {
+        flex: 1,
+        padding: 15,
+        borderRadius: 12,
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.05)'
+    },
+    label: {
+        fontSize: 13,
+        fontWeight: 'bold',
+        marginBottom: 15,
+        textAlign: 'center'
+    },
+    countText: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 15
+    },
+    heavyButton: {
+        paddingVertical: 12,
+        paddingHorizontal: 20,
+        borderRadius: 8,
+        width: '100%',
+        alignItems: 'center'
+    },
+    heavyLight: {
+        backgroundColor: '#EAE6DF'
+    },
+    heavyDark: {
+        backgroundColor: '#333333'
+    },
+    heavyBtnText: {
+        fontWeight: 'bold'
+    },
+    hintBox: {
+        padding: 15,
+        borderRadius: 8,
+        marginTop: 20,
+        backgroundColor: 'rgba(231, 76, 60, 0.1)'
+    }
 });

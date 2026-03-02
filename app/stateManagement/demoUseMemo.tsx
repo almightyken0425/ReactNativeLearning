@@ -103,29 +103,122 @@ export default function DemoUseMemoScreen() {
 }
 
 const styles = StyleSheet.create({
-    safeArea: { flex: 1 },
-    lightBg: { backgroundColor: '#F9F8F4' },
-    darkBg: { backgroundColor: '#121212' },
-    container: { flex: 1, padding: 20 },
-    sectionTitle: { fontSize: 18, fontWeight: 'bold', marginTop: 10, marginBottom: 15 },
-    lightText: { color: '#2C3E50' },
-    darkText: { color: '#E0E0E0' },
-    demoBox: { padding: 15, borderRadius: 12, marginBottom: 20, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 4, elevation: 3 },
-    lightCard: { backgroundColor: '#FFFFFF' },
-    darkCard: { backgroundColor: '#1E1E1E' },
-    demoText: { fontSize: 14, lineHeight: 22 },
-    lightDesc: { color: '#7F8C8D' },
-    darkDesc: { color: '#A0A0A0' },
-    codeText: { fontFamily: 'monospace', backgroundColor: '#F5F5F3', paddingHorizontal: 4, borderRadius: 4, color: '#8B7355' },
-    controlBox: { padding: 20, borderRadius: 12, marginBottom: 20, borderWidth: 1, borderColor: 'rgba(0,0,0,0.05)' },
-    label: { fontSize: 15, fontWeight: '600', marginBottom: 10 },
-    row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 },
-    button: { backgroundColor: '#8B7355', paddingVertical: 10, paddingHorizontal: 15, borderRadius: 8, flex: 1, marginRight: 10, alignItems: 'center' },
-    dangerButton: { backgroundColor: '#E74C3C', flex: 0, marginRight: 0 },
-    buttonText: { color: 'white', fontWeight: 'bold' },
-    switchRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
-    divider: { height: 1, backgroundColor: 'rgba(0,0,0,0.1)', marginVertical: 15 },
-    resultBox: { padding: 15, borderRadius: 12, backgroundColor: 'rgba(139, 115, 85, 0.1)' },
-    resultTitle: { fontSize: 16, fontWeight: 'bold', marginBottom: 10 },
-    resultData: { fontSize: 14, lineHeight: 20 },
+    safeArea: {
+        flex: 1
+    },
+    lightBg: {
+        backgroundColor: '#F9F8F4'
+    },
+    darkBg: {
+        backgroundColor: '#121212'
+    },
+    container: {
+        flex: 1,
+        padding: 20
+    },
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginTop: 10,
+        marginBottom: 15
+    },
+    lightText: {
+        color: '#2C3E50'
+    },
+    darkText: {
+        color: '#E0E0E0'
+    },
+    demoBox: {
+        padding: 15,
+        borderRadius: 12,
+        marginBottom: 20,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3
+    },
+    lightCard: {
+        backgroundColor: '#FFFFFF'
+    },
+    darkCard: {
+        backgroundColor: '#1E1E1E'
+    },
+    demoText: {
+        fontSize: 14,
+        lineHeight: 22
+    },
+    lightDesc: {
+        color: '#7F8C8D'
+    },
+    darkDesc: {
+        color: '#A0A0A0'
+    },
+    codeText: {
+        fontFamily: 'monospace',
+        backgroundColor: '#F5F5F3',
+        paddingHorizontal: 4,
+        borderRadius: 4,
+        color: '#8B7355'
+    },
+    controlBox: {
+        padding: 20,
+        borderRadius: 12,
+        marginBottom: 20,
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.05)'
+    },
+    label: {
+        fontSize: 15,
+        fontWeight: '600',
+        marginBottom: 10
+    },
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 10
+    },
+    button: {
+        backgroundColor: '#8B7355',
+        paddingVertical: 10,
+        paddingHorizontal: 15,
+        borderRadius: 8,
+        flex: 1,
+        marginRight: 10,
+        alignItems: 'center'
+    },
+    dangerButton: {
+        backgroundColor: '#E74C3C',
+        flex: 0,
+        marginRight: 0
+    },
+    buttonText: {
+        color: 'white',
+        fontWeight: 'bold'
+    },
+    switchRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10
+    },
+    divider: {
+        height: 1,
+        backgroundColor: 'rgba(0,0,0,0.1)',
+        marginVertical: 15
+    },
+    resultBox: {
+        padding: 15,
+        borderRadius: 12,
+        backgroundColor: 'rgba(139, 115, 85, 0.1)'
+    },
+    resultTitle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginBottom: 10
+    },
+    resultData: {
+        fontSize: 14,
+        lineHeight: 20
+    },
 });
