@@ -1,18 +1,17 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native';
 
 // =======================================================
-// 🧩 巨大且渲染昂貴的子元件
+// 🧩 巨大且渲染昂貴並戴上防護罩的子元件
 // =======================================================
-// 我們這裡刻意不使用 React.memo 包裝這個元件
-// 讓大家看看，就算用了 useCallback，如果沒有 React.memo 盾牌，子元件還是會被拖下水重繪！
-const HeavyButton = ({ onPress, title, isDark }: { onPress: () => void, title: string, isDark: boolean }) => {
-    // 每次這個元件重新渲染時，我們故意印出 log 讓我們知道防護罩破了
-    console.log(`重新渲染 💔 子元件: ${title} 因為沒有 React.memo，我還是重繪了`);
+// 這裡我們加上了 `React.memo`，這是一把鎖，它會檢查 Props 有沒有改變
+const HeavyButton = memo(({ onPress, title, isDark }: { onPress: () => void, title: string, isDark: boolean }) => {
+    // 每次這個元件重新渲染時，我們故意印出 log
+    console.log(`重新渲染 🟢 子元件: ${title} 我被重繪了`);
 
-    // 💡 關鍵偵測：我們用 useEffect 來偵測傳進來的 onPress 記憶體位址有沒有變
+    // 💡 我們用 useEffect 來偵測傳進來的 onPress 記憶體位址有沒有變
     useEffect(() => {
-        console.log(`位址檢查 🔑 子元件 ${title} 的 onPress 函式換了一個新的並改變了記憶體位址！`);
+        console.log(`位址檢查 🔑 子元件 ${title} 的 onPress 函式換了一個新的！`);
     }, [onPress]);
 
     // 模擬渲染很慢的子元件
@@ -27,35 +26,39 @@ const HeavyButton = ({ onPress, title, isDark }: { onPress: () => void, title: s
             <Text style={[styles.heavyBtnText, isDark ? styles.darkText : styles.lightText]}>{title}</Text>
         </TouchableOpacity>
     );
-};
+});
 
 
-export default function DemoUseCallbackScreen() {
+export default function DemoMemoAndCallbackScreen() {
     const [count1, setCount1] = useState(0);
     const [count2, setCount2] = useState(0);
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     // =======================================================
-    // 💡 關鍵差異：有無使用 useCallback 
+    // 💡 關鍵差異：父元件給子元件的「鑰匙」
     // =======================================================
 
-    // 🔴 未防護的函式
-    // 只要父元件重新渲染，例如切換深色模式或按任何按鈕，這個函式就會被重新宣告。
-    // 重新宣告等同於產生新的記憶體位址，也代表傳給子元件的屬性改變了，子元件的 React.memo 防護罩即被擊穿！
+    // 🔴 未防護且會變動參考的函式
+    // 只要父元件重新渲染，這個函式就會換一個新的記憶體位址。
+    // 子元件的 React.memo 收到了新鑰匙，以為 Props 改變了，防護罩直接被擊穿！
     const handleUnstableClick = () => {
         setCount1(c => c + 1);
     };
 
-    // 🟢 受防護的函式
-    // 透過 useCallback，React 會將這個函式的記憶體位址鎖死。
-    // 由於依賴陣列是空的 []，這個函式的參考永遠不會變。
-    // 注意內部使用更新計數狀態的函式寫法，因此不需要依賴現有的計數狀態
+    // 🟢 穩定參考並完美防禦的函式
+    // 透過 useCallback，把函式記憶體位址鎖死。
+    // 子元件的 React.memo 檢查發現鑰匙沒變，防護罩成功擋下重繪！
     const handleStableClick = useCallback(() => {
         setCount2(c => c + 1);
     }, []);
 
     return (
-        <View style={[styles.safeArea, isDarkMode ? styles.darkBg : styles.lightBg]}>
+        <View
+            style={[
+                styles.safeArea,
+                isDarkMode ? styles.darkBg : styles.lightBg
+            ]}
+        >
             <ScrollView
                 style={styles.container}
                 contentContainerStyle={{ paddingBottom: 50 }}
@@ -67,7 +70,7 @@ export default function DemoUseCallbackScreen() {
                         isDarkMode ? styles.darkText : styles.lightText
                     ]}
                 >
-                    💡 二部曲：useCallback 穩定函式參考
+                    💡 三部曲：完美結合雙劍合璧
                 </Text>
 
                 <View
@@ -82,29 +85,27 @@ export default function DemoUseCallbackScreen() {
                             isDarkMode ? styles.darkDesc : styles.lightDesc
                         ]}
                     >
-                        <Text style={{ fontWeight: 'bold' }}>• 殘酷的真相：</Text>
+                        <Text style={{ fontWeight: 'bold' }}>• 探戈需要兩個人跳：</Text>
                         {'\n'}
                         在這個畫面中，下方的子元件
-                        <Text style={{ fontWeight: 'bold', color: '#E74C3C' }}>沒有加上 React.memo 防護罩</Text>。
-                        當你切換深色模式時，兩個按鈕<Text style={{ fontWeight: 'bold' }}>都會卡頓並重新渲染</Text>！
+                        <Text style={{ fontWeight: 'bold', color: '#4CAF50' }}>皆有實作 React.memo 擔任防護鎖</Text>。
                         {'\n\n'}
 
-                        <Text style={{ fontWeight: 'bold' }}>• 那 useCallback 在幹嘛？請仔細觀察終端機會發現：</Text>
+                        <Text style={{ fontWeight: 'bold' }}>• 擊穿防護的地方：</Text>
                         {'\n'}
-                        雖然兩個都重繪了，但觀察終端機：
-                        {'\n'}1. 🔴 左邊未受保護的按鈕，傳入的函式一直被當作新的生命週期物件，所以會印出位址檢查。
-                        {'\n'}2. 🟢 右邊雖然也被拖下水重繪，但它收到的函式參考是穩固的，
-                        <Text style={{ fontWeight: 'bold' }}>沒有印出位址改變</Text>！
+                        當切換深色模式時，左側的按鈕依然會卡頓重繪，因為它傳入的
+                        <Text style={styles.codeText}>onPress</Text>
+                        是一把會變動即未受 useCallback 保護的鑰匙。當防護鎖發現變動後即觸發重繪。
                         {'\n\n'}
 
-                        <Text style={{ fontWeight: 'bold', color: '#8B7355' }}>
-                            小結：useCallback 是一把絕對不變的鑰匙，
-                            但如果子元件沒有實作 React.memo 當作防護鎖，鑰匙再穩固也是白搭。兩者必須互相搭配！
-                        </Text>
+                        <Text style={{ fontWeight: 'bold' }}>• 完美防禦的地方：</Text>
+                        {'\n'}
+                        右側的按鈕傳入了受 <Text style={styles.codeText}>useCallback</Text> 保護的函式也就是不變的鑰匙。
+                        防護鎖檢查發現參考位址並未改變，故成功跳過重繪！此即 React 框架中最高級的組件防禦法！
                     </Text>
                 </View>
 
-                {/* 狀態切換與顯示 */}
+                {/* 狀態切換 */}
                 <View style={styles.topControls}>
                     <View style={styles.switchRow}>
                         <Text style={isDarkMode ? styles.darkText : styles.lightText}>
@@ -126,15 +127,15 @@ export default function DemoUseCallbackScreen() {
                         ]}
                     >
                         <Text style={[styles.label, isDarkMode ? styles.darkText : styles.lightText]}>
-                            🔴 未受保護每次皆重建
+                            🔴 僅有防護鎖而無穩定鑰匙
                         </Text>
                         <Text style={[styles.countText, isDarkMode ? styles.darkText : styles.lightText]}>
                             計數: {count1}
                         </Text>
 
-                        {/* 這裡傳入的是沒被 useCallback 保護的函式 */}
+                        {/* 這裡防護罩被變動的函式位址給破壞了 */}
                         <HeavyButton
-                            title="受卡頓影響之按鈕"
+                            title="防護被擊穿之加一操作"
                             onPress={handleUnstableClick}
                             isDark={isDarkMode}
                         />
@@ -147,15 +148,15 @@ export default function DemoUseCallbackScreen() {
                         ]}
                     >
                         <Text style={[styles.label, isDarkMode ? styles.darkText : styles.lightText]}>
-                            🟢 受 useCallback 保護
+                            🟢 兼具防護鎖與穩定鑰匙
                         </Text>
                         <Text style={[styles.countText, isDarkMode ? styles.darkText : styles.lightText]}>
                             計數: {count2}
                         </Text>
 
-                        {/* 這裡傳入的是穩定的函式參考 */}
+                        {/* 雙劍合璧，完美防護 */}
                         <HeavyButton
-                            title="順暢無比之按鈕"
+                            title="完美防禦之加一操作"
                             onPress={handleStableClick}
                             isDark={isDarkMode}
                         />
@@ -169,9 +170,9 @@ export default function DemoUseCallbackScreen() {
                     ]}
                 >
                     <Text style={[styles.demoText, isDarkMode ? styles.darkDesc : styles.lightDesc]}>
-                        ⚠️ 提示：請打開終端機。切換深色模式時，
-                        你會發現兩個子元件都印出重新渲染，但只有左邊 🔴 按鈕會印出位址檢查，
-                        這證明了右邊 🟢 拿到的是穩定不變的函式。
+                        ⚠️ 提示：打開終端機並切換深色模式。
+                        你會發現左側組件不斷印出位址檢查與重新渲染，
+                        而右側組件則安靜無聲不產生任何日誌，完美跳過無謂的渲染！
                     </Text>
                 </View>
             </ScrollView>

@@ -39,35 +39,52 @@ export default function DemoUseEffectScreen() {
 
     return (
         <View style={styles.safeArea}>
-            <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 50 }}>
+            <ScrollView
+                style={styles.container}
+                contentContainerStyle={{ paddingBottom: 50 }}
+            >
                 {/* =======================================================
                     💡 副作用解說區
                 ======================================================= */}
-                <Text style={styles.sectionTitle}>💡 useEffect 副作用檢測</Text>
+                <Text style={styles.sectionTitle}>
+                    💡 useEffect 副作用檢測
+                </Text>
+
                 <View style={styles.demoBox}>
                     <Text style={styles.demoText}>
                         <Text style={{ fontWeight: 'bold' }}>• 依賴陣列 Dependency Array：</Text>
-                        我們將 <Text style={styles.codeText}>[email, password]</Text> 放進 <Text style={styles.codeText}>useEffect</Text> 的依賴陣列中。這代表只要這兩個值有任何變動，裡面的檢查 @ 符號與長度等驗證邏輯就會自動重新執行，並即時更新錯誤訊息與登入按鈕的狀態！
+                        {'\n'}
+                        我們將 <Text style={styles.codeText}>[email, password]</Text> 放進
+                        <Text style={styles.codeText}>useEffect</Text> 的依賴陣列中。
+                        這代表只要這兩個值有任何變動，裡面的檢查 @ 符號與長度等驗證邏輯就會自動重新執行，
+                        並即時更新錯誤訊息與登入按鈕的狀態！
                     </Text>
                 </View>
 
                 {/* =======================================================
                     📱 實際展示區
                 ======================================================= */}
-                <Text style={styles.sectionTitle}>📱 實際運作 Demo</Text>
+                <Text style={styles.sectionTitle}>
+                    📱 實際運作 Demo
+                </Text>
+
                 <View style={styles.exerciseBox}>
                     <Text style={styles.title}>歡迎登入</Text>
 
                     {/* Email 輸入框 */}
                     <Text style={styles.label}>電子郵件</Text>
                     <TextInput
-                        style={[styles.input, errorMsg ? styles.inputError : null]} // 如果有錯，邊框變紅
+                        style={[
+                            styles.input,
+                            errorMsg ? styles.inputError : null
+                        ]} // 如果有錯，邊框變紅
                         value={email}
                         onChangeText={setEmail}
                         placeholder="請輸入 Email"
                         keyboardType="email-address" // 讓鍵盤出現 @
                         autoCapitalize="none" // 關閉首字大寫
                     />
+
                     {/* 錯誤訊息區，僅在表單驗證失敗時渲染顯示 */}
                     {errorMsg ? <Text style={styles.errorText}>{errorMsg}</Text> : null}
 
@@ -84,7 +101,10 @@ export default function DemoUseEffectScreen() {
                     {/* 登入按鈕 */}
                     <TouchableOpacity
                         // 如果 isValid 是 false，就用 disabledButton 的樣式
-                        style={[styles.button, isValid ? null : styles.disabledButton]}
+                        style={[
+                            styles.button,
+                            isValid ? null : styles.disabledButton
+                        ]}
                         disabled={!isValid} // 如果驗證沒過，禁止點擊
                         onPress={() => Alert.alert('登入成功', `歡迎 ${email}`)}
                     >

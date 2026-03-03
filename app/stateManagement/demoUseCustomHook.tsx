@@ -12,28 +12,85 @@ export default function CustomHookDemoScreen() {
     const counter = useCounter(10);
 
     return (
-        <View style={[styles.safeArea, isDark ? styles.darkBg : styles.lightBg]}>
-            <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 50 }}>
+        <View
+            style={[
+                styles.safeArea,
+                isDark ? styles.darkBg : styles.lightBg
+            ]}
+        >
+            <ScrollView
+                style={styles.container}
+                contentContainerStyle={{ paddingBottom: 50 }}
+            >
                 {/* =======================================================
                     💡 Custom Hooks
                 ======================================================= */}
-                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 Custom Hooks：自訂鉤子</Text>
-                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDark ? styles.darkAccent : styles.lightAccent
+                    ]}
+                >
+                    💡 Custom Hooks：自訂鉤子
+                </Text>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
+                    >
                         把 <Text style={styles.codeText}>useState</Text> 邏輯抽離成 <Text style={styles.codeText}>use</Text> 開頭的函式。
                         讓 UI 回歸單純渲染。
                     </Text>
 
-                    <Text style={[styles.dataText, isDark ? styles.darkText : styles.lightText, { marginTop: 15 }]}>自訂計數器 Hook：{counter.count}</Text>
+                    <Text
+                        style={[
+                            styles.dataText,
+                            isDark ? styles.darkText : styles.lightText,
+                            { marginTop: 15 }
+                        ]}
+                    >
+                        自訂計數器 Hook：{counter.count}
+                    </Text>
+
                     <View style={styles.row}>
-                        <TouchableOpacity style={[styles.actionBtn, styles.flex1]} onPress={counter.increment}><Text style={styles.buttonText}>+ 加</Text></TouchableOpacity>
+                        <TouchableOpacity
+                            style={[styles.actionBtn, styles.flex1]}
+                            onPress={counter.increment}
+                        >
+                            <Text style={styles.buttonText}>+ 加</Text>
+                        </TouchableOpacity>
+
                         <View style={{ width: 10 }} />
-                        <TouchableOpacity style={[styles.actionBtn, styles.flex1]} onPress={counter.decrement}><Text style={styles.buttonText}>- 減</Text></TouchableOpacity>
+
+                        <TouchableOpacity
+                            style={[styles.actionBtn, styles.flex1]}
+                            onPress={counter.decrement}
+                        >
+                            <Text style={styles.buttonText}>- 減</Text>
+                        </TouchableOpacity>
+
                         <View style={{ width: 10 }} />
-                        <TouchableOpacity style={[styles.actionBtn, styles.flex1, { backgroundColor: '#D4C4B7' }]} onPress={counter.reset}><Text style={styles.buttonText}>重置</Text></TouchableOpacity>
+
+                        <TouchableOpacity
+                            style={[
+                                styles.actionBtn,
+                                styles.flex1,
+                                { backgroundColor: '#D4C4B7' }
+                            ]}
+                            onPress={counter.reset}
+                        >
+                            <Text style={styles.buttonText}>重置</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
-
             </ScrollView>
         </View>
     );

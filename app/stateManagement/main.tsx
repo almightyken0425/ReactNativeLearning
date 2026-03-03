@@ -30,32 +30,55 @@ export default function AdvancedStateManagementScreen() {
                 <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
                     <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
                         <Text style={{ fontWeight: 'bold' }}>
-                            • Hook (鉤子) 的白話文：
+                            • Hook 鉤子的白話文：
                         </Text>
-                        在 React 的世界裡，元件本來只是單純在畫畫的「無靈魂空殼」。
-                        如果元件需要「記住東西 (State)」，或者需要「跟系統底層互動 (Effect/Context)」，
+                        在 React 的世界裡，元件本來只是單純在畫畫的無靈魂空殼。
+                        如果元件需要記住東西，或者需要跟系統底層互動，
                         我們就會用這些以
                         <Text style={styles.codeText}>
                             use
                         </Text>
                         開頭的奇妙函式。
                         {'\n\n'}
-                        為什麼叫 Hook？因為它就像是一根「鉤子」，**把 React 底層強大的生命週期與狀態管理能力，硬生生地「鉤」進了我們這間平凡的元件小房間裡。**
+                        究竟為何稱為 Hook，因為它就像是一根鉤子，**把 React 底層強大的生命週期與狀態管理能力，硬生生地鉤進了我們這間平凡的元件小房間裡。**
                     </Text>
                 </View>
 
                 {/* =======================================================
                     💡 useState
                 ======================================================= */}
-                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 useState：給元件記憶</Text>
-                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDark ? styles.darkAccent : styles.lightAccent
+                    ]}
+                >
+                    💡 useState：給元件記憶
+                </Text>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
+                    >
                         <Text style={{ fontWeight: 'bold' }}>• 狀態追蹤：</Text>
+                        {'\n'}
                         我們使用 <Text style={styles.codeText}>useState</Text> 來儲存使用者輸入的內容，或是可以被改變的資料。
                         點擊下方按鈕，了解如何透過狀態讓畫面隨之產生變化。
                     </Text>
+
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#007AFF' : '#8B7355' }]}
+                        style={[
+                            styles.button,
+                            { backgroundColor: isDark ? '#007AFF' : '#8B7355' }
+                        ]}
                         onPress={() => router.push("/stateManagement/demoUseState" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 useState 範例</Text>
@@ -65,14 +88,38 @@ export default function AdvancedStateManagementScreen() {
                 {/* =======================================================
                     💡 useEffect
                 ======================================================= */}
-                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 useEffect：副作用檢測</Text>
-                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDark ? styles.darkAccent : styles.lightAccent
+                    ]}
+                >
+                    💡 useEffect：副作用檢測
+                </Text>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
+                    >
                         <Text style={{ fontWeight: 'bold' }}>• 生命週期與依賴：</Text>
-                        當特定資料改變時，我們可能需要做額外的「檢查」或「呼叫 API」。這時候就可以使用 <Text style={styles.codeText}>useEffect</Text> 來監聽變化，讓他自動發動攻擊！
+                        {'\n'}
+                        當特定資料改變時，我們可能需要做額外的「檢查」或「呼叫 API」。
+                        這時候就可以使用 <Text style={styles.codeText}>useEffect</Text> 來監聽變化，讓他自動發動攻擊！
                     </Text>
+
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#FF9800' : '#8B7355' }]}
+                        style={[
+                            styles.button,
+                            { backgroundColor: isDark ? '#FF9800' : '#8B7355' }
+                        ]}
                         onPress={() => router.push("/stateManagement/demoUseEffect" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 useEffect 範例</Text>
@@ -82,14 +129,33 @@ export default function AdvancedStateManagementScreen() {
                 {/* =======================================================
                     💡 Context API 跨檔廣播示範
                 ======================================================= */}
-                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 useContext：跨畫面傳送門</Text>
-                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDark ? styles.darkAccent : styles.lightAccent
+                    ]}
+                >
+                    💡 useContext：跨畫面傳送門
+                </Text>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
+                    >
                         <Text style={{ fontWeight: 'bold' }}>• 為什麼不能只用 useState 來做全域主題設定？</Text>
                         {'\n'}
                         如果你在每個畫面自己寫 `const [theme] = useState('light')`，下場就是每個頁面都各有各的電燈開關。
-                        如果要同步？你必須把開關透過屬性 (Props) 傳來傳去，或是寫像下面這樣噁心的監聽碼：
+                        如果要同步？你必須把開關透過屬性傳來傳去，或是寫像下面這樣噁心的監聽碼：
                         {'\n\n'}
+
                         <Text style={[styles.codeText, { fontSize: 12 }]}>
                             // 各頁面痛苦的監聽地獄{'\n'}
                             useEffect(() ={'>'} {'{\n'}
@@ -99,12 +165,18 @@ export default function AdvancedStateManagementScreen() {
                             {'}'}, []);
                         </Text>
                         {'\n\n'}
-                        <Text style={{ fontWeight: 'bold' }}>• 解法：把開關拉到 _layout.tsx_</Text>
-                        我們把 ThemeProvider 寫在 _layout.tsx。現在，你只要點擊下方按鈕去「設定頁面」修改主題，
+
+                        <Text style={{ fontWeight: 'bold' }}>• 解法：把開關拉到根層級配置</Text>
+                        {'\n'}
+                        我們把 ThemeProvider 寫在根層級佈局中。現在，你只要點擊下方按鈕去設定頁面修改主題，
                         修改完按返回時，你會發現這個首頁已經**瞬間變色**，不需要寫任何額外的監聽邏輯！
                     </Text>
+
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }]}
+                        style={[
+                            styles.button,
+                            { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }
+                        ]}
                         onPress={() => router.push("/stateManagement/demoUseContext" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往設定頁切換主題</Text>
@@ -117,13 +189,36 @@ export default function AdvancedStateManagementScreen() {
                 {/* =======================================================
                     💡 useReducer：複雜狀態機 (拆分至獨立畫面)
                 ======================================================= */}
-                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 useReducer：集中管理複雜狀態</Text>
-                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
-                        我們將這個較為複雜的觀念獨立成了一個專屬的畫面，點擊下方按鈕前往查看 useReducer 的購物車範例吧！
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDark ? styles.darkAccent : styles.lightAccent
+                    ]}
+                >
+                    💡 useReducer：集中管理複雜狀態
+                </Text>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
+                    >
+                        我們將這個較為複雜的觀念獨立成了一個專屬的畫面，
+                        點擊下方按鈕前往查看 useReducer 的購物車範例吧！
                     </Text>
+
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }]}
+                        style={[
+                            styles.button,
+                            { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }
+                        ]}
                         onPress={() => router.push("/stateManagement/demoUseReducer" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 useReducer 範例</Text>
@@ -133,13 +228,36 @@ export default function AdvancedStateManagementScreen() {
                 {/* =======================================================
                     💡 Custom Hooks (拆分至獨立畫面)
                 ======================================================= */}
-                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 Custom Hooks：自訂鉤子</Text>
-                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
-                        我們將自訂鉤子的觀念獨立成了一個專屬的畫面，點擊下方按鈕前往查看 Custom Hook 的計數器範例吧！
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDark ? styles.darkAccent : styles.lightAccent
+                    ]}
+                >
+                    💡 Custom Hooks：自訂鉤子
+                </Text>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
+                    >
+                        我們將自訂鉤子的觀念獨立成了一個專屬的畫面，
+                        點擊下方按鈕前往查看 Custom Hook 的計數器範例吧！
                     </Text>
+
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }]}
+                        style={[
+                            styles.button,
+                            { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }
+                        ]}
                         onPress={() => router.push("/stateManagement/demoUseCustomHook" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 Custom Hook 範例</Text>
@@ -149,14 +267,38 @@ export default function AdvancedStateManagementScreen() {
                 {/* =======================================================
                     💡 useMemo：記憶高耗時運算
                 ======================================================= */}
-                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 useMemo：記憶耗時運算</Text>
-                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDark ? styles.darkAccent : styles.lightAccent
+                    ]}
+                >
+                    💡 useMemo：記憶耗時運算
+                </Text>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
+                    >
                         當元件重新渲染時，某些複雜的數學運算或巨量陣列過濾若跟著重跑會導致畫面嚴重卡頓。
-                        透過 <Text style={styles.codeText}>useMemo</Text> 可以將運算結果「快取」起來，只要依賴的值沒變，就不會浪費效能重新計算。
+                        {'\n'}
+                        透過 <Text style={styles.codeText}>useMemo</Text> 可以將運算結果快取起來，
+                        只要依賴的值沒變，就不會浪費效能重新計算。
                     </Text>
+
                     <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }]}
+                        style={[
+                            styles.button,
+                            { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }
+                        ]}
                         onPress={() => router.push("/stateManagement/demoUseMemo" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 useMemo 範例</Text>
@@ -164,36 +306,123 @@ export default function AdvancedStateManagementScreen() {
                 </View>
 
                 {/* =======================================================
-                    💡 useCallback：穩定函式參考
+                    💡 React.memo：阻擋單純 Props
                 ======================================================= */}
-                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 useCallback：穩定函式參考</Text>
-                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
-                        每次元件重新渲染時，裡面的函式都會被「重新宣告」並分配新的記憶體位址。
-                        若將這些函式傳遞給子元件，將會破壞防護罩導致子元件必定重繪。<Text style={styles.codeText}>useCallback</Text> 能幫你鎖死函式參考，避免無謂的連鎖渲染。
-                    </Text>
-                    <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }]}
-                        onPress={() => router.push("/stateManagement/demoUseCallback" as any)}
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDark ? styles.darkAccent : styles.lightAccent
+                    ]}
+                >
+                    💡 首部曲：React.memo 子元件防護罩
+                </Text>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
                     >
-                        <Text style={styles.buttonText}>➡ 前往 useCallback 範例</Text>
+                        當父元件狀態更新時，預設底下所有的子孫元件都會跟著重新渲染。
+                        {'\n'}
+                        透過 <Text style={styles.codeText}>React.memo</Text> 將子元件包裝起來，
+                        只要傳入的基本型別屬性沒改變，就能強制跳過渲染！
+                    </Text>
+
+                    <TouchableOpacity
+                        style={[
+                            styles.button,
+                            { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }
+                        ]}
+                        onPress={() => router.push("/stateManagement/demoReactMemo" as any)}
+                    >
+                        <Text style={styles.buttonText}>➡ 前往首部曲 React.memo</Text>
                     </TouchableOpacity>
                 </View>
 
                 {/* =======================================================
-                    💡 React.memo：阻擋無謂渲染
+                    💡 useCallback：穩定函式參考
                 ======================================================= */}
-                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 React.memo：子元件防護罩</Text>
-                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
-                        當父元件狀態更新時，預設底下所有的子孫元件都會跟著重新渲染。
-                        透過 <Text style={styles.codeText}>React.memo</Text> 將子元件包裝起來，它就會自動比對收到的 Props 有無改變，沒有改變就強制跳過渲染！
-                    </Text>
-                    <TouchableOpacity
-                        style={[styles.button, { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }]}
-                        onPress={() => router.push("/stateManagement/demoReactMemo" as any)}
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDark ? styles.darkAccent : styles.lightAccent
+                    ]}
+                >
+                    💡 二部曲：useCallback 穩定函式
+                </Text>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
                     >
-                        <Text style={styles.buttonText}>➡ 前往 React.memo 範例</Text>
+                        每次元件重繪時，裡面的函式都會被重新宣告分配新記憶體。
+                        <Text style={styles.codeText}>useCallback</Text> 能鎖死函式參考，
+                        但<Text style={{ fontWeight: 'bold', color: '#E74C3C' }}>警告</Text>：
+                        若子元件沒戴上 React.memo 的盾牌，單用 useCallback 無法阻止重繪效能浪費！
+                    </Text>
+
+                    <TouchableOpacity
+                        style={[
+                            styles.button,
+                            { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }
+                        ]}
+                        onPress={() => router.push("/stateManagement/demoUseCallback" as any)}
+                    >
+                        <Text style={styles.buttonText}>➡ 前往二部曲 useCallback</Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* =======================================================
+                    💡 React.memo + useCallback：完美組合
+                ======================================================= */}
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDark ? styles.darkAccent : styles.lightAccent
+                    ]}
+                >
+                    💡 三部曲：完美結合雙劍合璧
+                </Text>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
+                    >
+                        傳遞函式給子元件時，唯有同時使用 <Text style={styles.codeText}>React.memo</Text> 擋下一般重繪，
+                        加上 <Text style={styles.codeText}>useCallback</Text> 給予穩定的函式鑰匙，這兩者跳起探戈，才能達成完美防禦！
+                    </Text>
+
+                    <TouchableOpacity
+                        style={[
+                            styles.button,
+                            { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }
+                        ]}
+                        onPress={() => router.push("/stateManagement/demoMemoAndCallback" as any)}
+                    >
+                        <Text style={styles.buttonText}>➡ 前往三部曲完美結合</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -203,26 +432,99 @@ export default function AdvancedStateManagementScreen() {
 }
 
 const styles = StyleSheet.create({
-    safeArea: { flex: 1 },
-    lightBg: { backgroundColor: '#F9F8F4' },
-    darkBg: { backgroundColor: '#121212' },
-    container: { flex: 1, padding: 20 },
-    headerTitle: { fontSize: 24, fontWeight: 'bold', marginVertical: 20, textAlign: 'center' },
-    lightText: { color: '#2C3E50' },
-    darkText: { color: '#fff' },
-    sectionTitle: { fontSize: 18, fontWeight: 'bold', marginTop: 10, marginBottom: 15 },
-    lightAccent: { color: '#8B7355' },
-    darkAccent: { color: '#BB86FC' },
-    demoBox: { padding: 20, borderRadius: 12, marginBottom: 25, shadowColor: '#8B7355', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.1, shadowRadius: 4, elevation: 3 },
-    lightCard: { backgroundColor: '#FFFFFF' },
-    darkCard: { backgroundColor: '#1e1e1e' },
-    demoText: { fontSize: 14, lineHeight: 22 },
-    lightDesc: { color: '#7F8C8D' },
-    darkDesc: { color: '#aaa' },
-    codeText: { fontFamily: 'monospace', backgroundColor: '#F5F5F3', paddingHorizontal: 4, borderRadius: 4, color: '#8B7355' },
-    dataText: { fontSize: 20, fontWeight: 'bold', textAlign: 'center', marginBottom: 10 },
-    button: { height: 50, borderRadius: 8, justifyContent: 'center', alignItems: 'center', marginTop: 15 },
-    buttonText: { color: 'white', fontSize: 16, fontWeight: 'bold' },
-    row: { flexDirection: 'row', justifyContent: 'space-between' },
-    flex1: { flex: 1 }
+    safeArea: {
+        flex: 1
+    },
+    lightBg: {
+        backgroundColor: '#F9F8F4'
+    },
+    darkBg: {
+        backgroundColor: '#121212'
+    },
+    container: {
+        flex: 1,
+        padding: 20
+    },
+    headerTitle: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginVertical: 20,
+        textAlign: 'center'
+    },
+    lightText: {
+        color: '#2C3E50'
+    },
+    darkText: {
+        color: '#fff'
+    },
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginTop: 10,
+        marginBottom: 15
+    },
+    lightAccent: {
+        color: '#8B7355'
+    },
+    darkAccent: {
+        color: '#BB86FC'
+    },
+    demoBox: {
+        padding: 20,
+        borderRadius: 12,
+        marginBottom: 25,
+        shadowColor: '#8B7355',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3
+    },
+    lightCard: {
+        backgroundColor: '#FFFFFF'
+    },
+    darkCard: {
+        backgroundColor: '#1e1e1e'
+    },
+    demoText: {
+        fontSize: 14,
+        lineHeight: 22
+    },
+    lightDesc: {
+        color: '#7F8C8D'
+    },
+    darkDesc: {
+        color: '#aaa'
+    },
+    codeText: {
+        fontFamily: 'monospace',
+        backgroundColor: '#F5F5F3',
+        paddingHorizontal: 4,
+        borderRadius: 4,
+        color: '#8B7355'
+    },
+    dataText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: 10
+    },
+    button: {
+        height: 50,
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 15
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    flex1: {
+        flex: 1
+    }
 });

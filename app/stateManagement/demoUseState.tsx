@@ -15,14 +15,21 @@ export default function DemoUseStateScreen() {
 
     return (
         <View style={styles.safeArea}>
-            <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 50 }}>
+            <ScrollView
+                style={styles.container}
+                contentContainerStyle={{ paddingBottom: 50 }}
+            >
                 {/* =======================================================
                     💡 狀態解說區
                 ======================================================= */}
-                <Text style={styles.sectionTitle}>💡 useState 雙向綁定</Text>
+                <Text style={styles.sectionTitle}>
+                    💡 useState 雙向綁定
+                </Text>
+
                 <View style={styles.demoBox}>
                     <Text style={styles.demoText}>
                         <Text style={{ fontWeight: 'bold' }}>• 狀態追蹤：</Text>
+                        {'\n'}
                         我們使用 <Text style={styles.codeText}>useState</Text> 來儲存使用者輸入的名字與 Email。
                         隨著你打字，下方藍色的區塊會即時更新文字，這就是「雙向綁定 (Two-way binding)」的效果。
                     </Text>
@@ -31,7 +38,10 @@ export default function DemoUseStateScreen() {
                 {/* =======================================================
                     📱 實際展示區
                 ======================================================= */}
-                <Text style={styles.sectionTitle}>📱 實際運作 Demo</Text>
+                <Text style={styles.sectionTitle}>
+                    📱 實際運作 Demo
+                </Text>
+
                 <View style={styles.exerciseBox}>
                     <Text style={styles.title}>會員資料設定</Text>
 
@@ -55,8 +65,12 @@ export default function DemoUseStateScreen() {
 
                     {/* 即時預覽區 */}
                     <View style={styles.previewBox}>
-                        <Text style={styles.previewText}>哈囉！ {name ? name : '(請輸入姓名)'}</Text>
-                        <Text style={styles.previewText}>你的信箱是 {email ? email : '(請輸入 Email)'}</Text>
+                        <Text style={styles.previewText}>
+                            哈囉！ {name ? name : '(請輸入姓名)'}
+                        </Text>
+                        <Text style={styles.previewText}>
+                            你的信箱是 {email ? email : '(請輸入 Email)'}
+                        </Text>
                     </View>
 
                     <TouchableOpacity

@@ -9,16 +9,37 @@ export default function SettingsScreen() {
     const isDark = theme === 'dark';
 
     return (
-        <View style={[styles.safeArea, isDark ? styles.darkBg : styles.lightBg]}>
-
+        <View
+            style={[
+                styles.safeArea,
+                isDark ? styles.darkBg : styles.lightBg
+            ]}
+        >
             <ScrollView style={styles.container}>
-                <View style={[styles.card, isDark ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.cardTitle, isDark ? styles.darkText : styles.lightText]}>
+                <View
+                    style={[
+                        styles.card,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.cardTitle,
+                            isDark ? styles.darkText : styles.lightText
+                        ]}
+                    >
                         外觀主題
                     </Text>
-                    <Text style={[styles.desc, isDark ? styles.darkDesc : styles.lightDesc]}>
+
+                    <Text
+                        style={[
+                            styles.desc,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
+                    >
                         在這裡修改的這個值，因為是透過 useContext 發送到頂層的 Provider，
-                        所以當你按返回時，你會發現首頁也已經同步變色了！完全不需要透過路由參數傳遞資料。
+                        所以當你按返回時，你會發現首頁也已經同步變色了！
+                        完全不需要透過路由參數傳遞資料。
                     </Text>
 
                     <View style={styles.row}>

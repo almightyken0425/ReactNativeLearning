@@ -11,33 +11,99 @@ export default function ReducerExampleScreen() {
     const [cartState, dispatch] = useReducer(cartReducer, { count: 0, total: 0 });
 
     return (
-        <View style={[styles.safeArea, isDark ? styles.darkBg : styles.lightBg]}>
-            <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 50 }}>
+        <View
+            style={[
+                styles.safeArea,
+                isDark ? styles.darkBg : styles.lightBg
+            ]}
+        >
+            <ScrollView
+                style={styles.container}
+                contentContainerStyle={{ paddingBottom: 50 }}
+            >
                 {/* =======================================================
                     💡 useReducer：複雜狀態機
                 ======================================================= */}
-                <Text style={[styles.sectionTitle, isDark ? styles.darkAccent : styles.lightAccent]}>💡 useReducer：集中管理複雜狀態</Text>
-                <View style={[styles.demoBox, isDark ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.demoText, isDark ? styles.darkDesc : styles.lightDesc]}>
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDark ? styles.darkAccent : styles.lightAccent
+                    ]}
+                >
+                    💡 useReducer：集中管理複雜狀態
+                </Text>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDark ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDark ? styles.darkDesc : styles.lightDesc
+                        ]}
+                    >
                         <Text style={{ fontWeight: 'bold' }}>• Reducer：</Text>
-                        當總數量與總金額等多個聯動的變數需要一起更新，可以把邏輯整理成一個 <Text style={styles.codeText}>reducer</Text> 函式。UI 只透過呼叫 <Text style={styles.codeText}>dispatch</Text> 派發一個動作標籤，剩下的更新運算完全交給 reducer 處理。
+                        {'\n'}
+                        當總數量與總金額等多個聯動的變數需要一起更新，
+                        可以把邏輯整理成一個 <Text style={styles.codeText}>reducer</Text> 函式。
+                        UI 只透過呼叫 <Text style={styles.codeText}>dispatch</Text> 派發一個動作標籤，
+                        剩下的更新運算完全交給 reducer 處理。
                     </Text>
 
-                    <Text style={[styles.dataText, isDark ? styles.darkText : styles.lightText, { marginTop: 15 }]}>
-                        購物車內有：{cartState.count} 項商品</Text>
-                    <Text style={[styles.dataText, isDark ? styles.darkText : styles.lightText]}>
-                        總金額： {cartState.total}</Text>
+                    <Text
+                        style={[
+                            styles.dataText,
+                            isDark ? styles.darkText : styles.lightText,
+                            { marginTop: 15 }
+                        ]}
+                    >
+                        購物車內有：{cartState.count} 項商品
+                    </Text>
+                    <Text
+                        style={[
+                            styles.dataText,
+                            isDark ? styles.darkText : styles.lightText
+                        ]}
+                    >
+                        總金額： {cartState.total}
+                    </Text>
 
                     <View style={styles.row}>
-                        <TouchableOpacity style={[styles.button, styles.flex1, { backgroundColor: '#4CAF50' }]} onPress={() => dispatch({ type: 'ADD_ITEM', price: 100 })}>
+                        <TouchableOpacity
+                            style={[
+                                styles.button,
+                                styles.flex1,
+                                { backgroundColor: '#4CAF50' }
+                            ]}
+                            onPress={() => dispatch({ type: 'ADD_ITEM', price: 100 })}
+                        >
                             <Text style={styles.buttonText}>+ 增商品</Text>
                         </TouchableOpacity>
+
                         <View style={{ width: 10 }} />
-                        <TouchableOpacity style={[styles.button, styles.flex1, { backgroundColor: '#FF9800' }]} onPress={() => dispatch({ type: 'REMOVE_ITEM', price: 100 })}>
+
+                        <TouchableOpacity
+                            style={[
+                                styles.button,
+                                styles.flex1,
+                                { backgroundColor: '#FF9800' }
+                            ]}
+                            onPress={() => dispatch({ type: 'REMOVE_ITEM', price: 100 })}
+                        >
                             <Text style={styles.buttonText}>- 減商品</Text>
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={[styles.button, { backgroundColor: '#F44336', marginTop: 10 }]} onPress={() => dispatch({ type: 'CLEAR' })}>
+
+                    <TouchableOpacity
+                        style={[
+                            styles.button,
+                            { backgroundColor: '#F44336', marginTop: 10 }
+                        ]}
+                        onPress={() => dispatch({ type: 'CLEAR' })}
+                    >
                         <Text style={styles.buttonText}>🗑️ 清空</Text>
                     </TouchableOpacity>
                 </View>

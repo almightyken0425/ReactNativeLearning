@@ -44,42 +44,98 @@ export default function DemoUseMemoScreen() {
     }, [range]); // <-- 依賴陣列：只有 range 改變時才重算
 
     return (
-        <View style={[styles.safeArea, isDarkMode ? styles.darkBg : styles.lightBg]}>
-            <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 50 }}>
+        <View
+            style={[
+                styles.safeArea,
+                isDarkMode ? styles.darkBg : styles.lightBg
+            ]}
+        >
+            <ScrollView
+                style={styles.container}
+                contentContainerStyle={{ paddingBottom: 50 }}
+            >
                 {/* 說明區塊 */}
-                <Text style={[styles.sectionTitle, isDarkMode ? styles.darkText : styles.lightText]}>
+                <Text
+                    style={[
+                        styles.sectionTitle,
+                        isDarkMode ? styles.darkText : styles.lightText
+                    ]}
+                >
                     💡 useMemo：記憶耗時運算
                 </Text>
-                <View style={[styles.demoBox, isDarkMode ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.demoText, isDarkMode ? styles.darkDesc : styles.lightDesc]}>
+
+                <View
+                    style={[
+                        styles.demoBox,
+                        isDarkMode ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.demoText,
+                            isDarkMode ? styles.darkDesc : styles.lightDesc
+                        ]}
+                    >
                         <Text style={{ fontWeight: 'bold' }}>• 實驗一 (無關狀態更新)：</Text>
-                        點擊下方的「一般計數器」或「切換深色模式」。因為我們使用了 <Text style={styles.codeText}>useMemo</Text>，質數運算不會被觸發，畫面瞬間更新。
+                        {'\n'}
+                        點擊下方的「一般計數器」或「切換深色模式」。
+                        因為我們使用了 <Text style={styles.codeText}>useMemo</Text>，質數運算不會被觸發，畫面瞬間更新。
                         {'\n\n'}
+
                         <Text style={{ fontWeight: 'bold' }}>• 實驗二 (依賴變數更新)：</Text>
-                        點擊「增加運算範圍」。因為運算範圍改變了，React 知道舊的快取已失效，此時才會重新執行耗時運算，你會感受到明顯的卡頓。
+                        {'\n'}
+                        點擊「增加運算範圍」。因為運算範圍改變了，React 知道舊的快取已失效，
+                        此時才會重新執行耗時運算，你會感受到明顯的卡頓。
                     </Text>
                 </View>
 
                 {/* 互動控制區塊 */}
-                <View style={[styles.controlBox, isDarkMode ? styles.darkCard : styles.lightCard]}>
+                <View
+                    style={[
+                        styles.controlBox,
+                        isDarkMode ? styles.darkCard : styles.lightCard
+                    ]}
+                >
                     {/* 1. 無關緊要的狀態 (不應該卡頓) */}
-                    <Text style={[styles.label, isDarkMode ? styles.darkText : styles.lightText]}>無關狀態測試 (應該要很順暢)</Text>
+                    <Text
+                        style={[
+                            styles.label,
+                            isDarkMode ? styles.darkText : styles.lightText
+                        ]}
+                    >
+                        無關狀態測試 (應該要很順暢)
+                    </Text>
 
                     <View style={styles.row}>
-                        <TouchableOpacity style={styles.button} onPress={() => setCount(c => c + 1)}>
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={() => setCount(c => c + 1)}
+                        >
                             <Text style={styles.buttonText}>一般計數器: {count}</Text>
                         </TouchableOpacity>
 
                         <View style={styles.switchRow}>
-                            <Text style={isDarkMode ? styles.darkText : styles.lightText}>深色模式</Text>
-                            <Switch value={isDarkMode} onValueChange={setIsDarkMode} />
+                            <Text style={isDarkMode ? styles.darkText : styles.lightText}>
+                                深色模式
+                            </Text>
+                            <Switch
+                                value={isDarkMode}
+                                onValueChange={setIsDarkMode}
+                            />
                         </View>
                     </View>
 
                     <View style={styles.divider} />
 
                     {/* 2. 相關的狀態 (才會觸發重新計算並卡頓) */}
-                    <Text style={[styles.label, isDarkMode ? styles.darkText : styles.lightText]}>依賴狀態測試 (會引發卡頓)</Text>
+                    <Text
+                        style={[
+                            styles.label,
+                            isDarkMode ? styles.darkText : styles.lightText
+                        ]}
+                    >
+                        依賴狀態測試 (會引發卡頓)
+                    </Text>
                     <TouchableOpacity
                         style={[styles.button, styles.dangerButton]}
                         onPress={() => setRange(r => r + 10)}
@@ -89,11 +145,27 @@ export default function DemoUseMemoScreen() {
                 </View>
 
                 {/* 結果顯示區塊 */}
-                <View style={[styles.resultBox, isDarkMode ? styles.darkCard : styles.lightCard]}>
-                    <Text style={[styles.resultTitle, isDarkMode ? styles.darkText : styles.lightText]}>
+                <View
+                    style={[
+                        styles.resultBox,
+                        isDarkMode ? styles.darkCard : styles.lightCard
+                    ]}
+                >
+                    <Text
+                        style={[
+                            styles.resultTitle,
+                            isDarkMode ? styles.darkText : styles.lightText
+                        ]}
+                    >
                         運算結果：找到 {primes.length} 個質數
                     </Text>
-                    <Text style={[styles.resultData, isDarkMode ? styles.darkDesc : styles.lightDesc]} numberOfLines={5}>
+                    <Text
+                        style={[
+                            styles.resultData,
+                            isDarkMode ? styles.darkDesc : styles.lightDesc
+                        ]}
+                        numberOfLines={5}
+                    >
                         {primes.join(', ')} ...
                     </Text>
                 </View>
