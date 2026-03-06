@@ -21,6 +21,8 @@ export default function RootLayout() {
           name="index"
           options={{ title: 'React Native 百科全書' }}
         />
+        <Stack.Screen name="routingAndDeepLink/main" options={{ title: '📥 路由與深層連結' }} />
+        <Stack.Screen name="routingAndDeepLink/demoPage" options={{ title: '🎯 參數接收頁面' }} />
         <Stack.Screen name="stateManagement/main" options={{ title: 'Hooks 狀態與副作用百科' }} />
         <Stack.Screen name="stateManagement/demoUseState" options={{ title: 'useState 雙向綁定' }} />
         <Stack.Screen name="stateManagement/demoUseEffect" options={{ title: 'useEffect 表單驗證' }} />

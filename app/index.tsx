@@ -55,6 +55,24 @@ export default function IndexMenu() {
                         </View>
                         <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/routingAndDeepLink/main" as any)}>
+                        <Text style={styles.chapterNumber}>06</Text>
+                        <View style={styles.chapterContent}>
+                            <Text style={styles.chapterTitle}>路由與深層連結</Text>
+                            <Text style={styles.chapterDesc}>外部喚醒與參數解析</Text>
+                        </View>
+                        <Text style={styles.arrow}>›</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/deviceAdaptation/main" as any)}>
+                        <Text style={styles.chapterNumber}>07</Text>
+                        <View style={styles.chapterContent}>
+                            <Text style={styles.chapterTitle}>行動裝置適配</Text>
+                            <Text style={styles.chapterDesc}>FlatList 與鍵盤處理百科</Text>
+                        </View>
+                        <Text style={styles.arrow}>›</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </ScrollView>
