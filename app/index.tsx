@@ -60,7 +60,7 @@ export default function IndexMenu() {
                         <Text style={styles.chapterNumber}>06</Text>
                         <View style={styles.chapterContent}>
                             <Text style={styles.chapterTitle}>路由與深層連結</Text>
-                            <Text style={styles.chapterDesc}>外部喚醒與參數解析</Text>
+                            <Text style={styles.chapterDesc}>多層級導航、外部喚醒與參數解析</Text>
                         </View>
                         <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>

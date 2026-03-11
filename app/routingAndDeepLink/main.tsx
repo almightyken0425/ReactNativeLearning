@@ -13,7 +13,7 @@ export default function RoutingAndDeepLinkMainScreen() {
                 💡 Expo Router 與導航
             ======================================================= */}
             <Text style={styles.sectionTitle}>
-                💡 Expo Router：檔案就是路由
+                💡 1. 堆疊導航 (Stack Navigation)
             </Text>
 
             <View style={styles.demoBox}>
@@ -32,6 +32,50 @@ export default function RoutingAndDeepLinkMainScreen() {
                     onPress={() => router.push("/routingAndDeepLink/demoExpoRouter" as any)}
                 >
                     <Text style={styles.buttonText}>➡ 前往 Expo Router 基礎教學</Text>
+                </TouchableOpacity>
+            </View>
+
+            {/* =======================================================
+                💡 底部標籤導航 (Bottom Tabs)
+            ======================================================= */}
+            <Text style={styles.sectionTitle}>
+                💡 2. 底部標籤導航 (Bottom Tabs)
+            </Text>
+
+            <View style={styles.demoBox}>
+                <Text style={styles.demoText}>
+                    <Text style={{ fontWeight: 'bold' }}>• 平行的主要功能區塊：</Text>
+                    {'\n'}
+                    使用 <Text style={styles.codeText}>(group)</Text> 資料夾名稱與 <Text style={styles.codeText}>Tabs</Text> 元件，可以輕鬆建立底部標籤列。標籤頁各自擁有導航狀態，切換時可以保持目前的畫面進度！
+                </Text>
+
+                <TouchableOpacity
+                    style={[styles.button, { backgroundColor: '#27AE60' }]}
+                    onPress={() => router.push("/routingAndDeepLink/(demoTabs)" as any)}
+                >
+                    <Text style={styles.buttonText}>➡ 前往底部標籤導航展示</Text>
+                </TouchableOpacity>
+            </View>
+
+            {/* =======================================================
+                💡 標題區塊操作按鈕 (Header Buttons)
+            ======================================================= */}
+            <Text style={styles.sectionTitle}>
+                💡 3. 標題區塊操作按鈕 (Header Buttons)
+            </Text>
+
+            <View style={styles.demoBox}>
+                <Text style={styles.demoText}>
+                    <Text style={{ fontWeight: 'bold' }}>• 與原生標題列互動：</Text>
+                    {'\n'}
+                    利用 <Text style={styles.codeText}>Stack.Screen</Text> 動態覆寫標題列設定，輕鬆把「儲存」或「分享」等互動按鈕放進右上角的原生空間！
+                </Text>
+
+                <TouchableOpacity
+                    style={[styles.button, { backgroundColor: '#E67E22' }]}
+                    onPress={() => router.push("/routingAndDeepLink/demoHeaderButtons" as any)}
+                >
+                    <Text style={styles.buttonText}>➡ 前往標題區塊按鈕實戰</Text>
                 </TouchableOpacity>
             </View>
 
