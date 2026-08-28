@@ -29,7 +29,7 @@ export default function RoutingAndDeepLinkMainScreen() {
 
                 <TouchableOpacity
                     style={[styles.button, { backgroundColor: '#3498DB' }]}
-                    onPress={() => router.push("/routingAndDeepLink/demoExpoRouter" as any)}
+                    onPress={() => router.push("/routing_and_deep_link/demo_expo_router" as any)}
                 >
                     <Text style={styles.buttonText}>➡ 前往 Expo Router 基礎教學</Text>
                 </TouchableOpacity>
@@ -51,7 +51,7 @@ export default function RoutingAndDeepLinkMainScreen() {
 
                 <TouchableOpacity
                     style={[styles.button, { backgroundColor: '#27AE60' }]}
-                    onPress={() => router.push("/routingAndDeepLink/(demoTabs)" as any)}
+                    onPress={() => router.push("/routing_and_deep_link/(demo_tabs)" as any)}
                 >
                     <Text style={styles.buttonText}>➡ 前往底部標籤導航展示</Text>
                 </TouchableOpacity>
@@ -73,7 +73,7 @@ export default function RoutingAndDeepLinkMainScreen() {
 
                 <TouchableOpacity
                     style={[styles.button, { backgroundColor: '#E67E22' }]}
-                    onPress={() => router.push("/routingAndDeepLink/demoHeaderButtons" as any)}
+                    onPress={() => router.push("/routing_and_deep_link/demo_header_buttons" as any)}
                 >
                     <Text style={styles.buttonText}>➡ 前往標題區塊按鈕實戰</Text>
                 </TouchableOpacity>
@@ -98,7 +98,7 @@ export default function RoutingAndDeepLinkMainScreen() {
 
                 <TouchableOpacity
                     style={[styles.button, { backgroundColor: '#9B59B6' }]}
-                    onPress={() => router.push("/routingAndDeepLink/demoDeepLink" as any)}
+                    onPress={() => router.push("/routing_and_deep_link/demo_deep_link" as any)}
                 >
                     <Text style={styles.buttonText}>➡ 前往深層連結與傳參實戰</Text>
                 </TouchableOpacity>

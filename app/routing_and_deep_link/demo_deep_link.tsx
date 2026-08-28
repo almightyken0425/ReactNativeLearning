@@ -20,7 +20,7 @@ export default function DeepLinkDemoScreen() {
     }, []);
 
     const handleTestDeepLink = async () => {
-        const deepLinkUrl = Linking.createURL('/routingAndDeepLink/demoDeepLink', {
+        const deepLinkUrl = Linking.createURL('/routing_and_deep_link/demo_deep_link', {
             queryParams: {
                 source: 'deepLink_button',
                 message: 'Hello_from_DeepLink',
@@ -73,7 +73,7 @@ export default function DeepLinkDemoScreen() {
                 </TouchableOpacity>
 
                 <Text style={[styles.demoText, { marginTop: 15, fontStyle: 'italic', fontSize: 13 }]}>
-                    CLI 測試: npx uri-scheme open reactnativelearning://routingAndDeepLink/demoDeepLink?source=cli --android
+                    CLI 測試: npx uri-scheme open reactnativelearning://routing_and_deep_link/demo_deep_link?source=cli --android
                 </Text>
             </View>
 

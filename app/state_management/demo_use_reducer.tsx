@@ -1,8 +1,8 @@
 import React, { useContext, useReducer } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { ThemeContext } from './context/ThemeContext';
-import { cartReducer } from './reducers/cartReducer';
+import { ThemeContext } from './context/theme_context';
+import { cartReducer } from './reducers/cart_reducer';
 
 export default function ReducerExampleScreen() {
     const { theme } = useContext(ThemeContext);

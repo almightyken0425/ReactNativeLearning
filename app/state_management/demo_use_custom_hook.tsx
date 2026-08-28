@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { ThemeContext } from './context/ThemeContext';
-import { useCounter } from './hooks/useCounter';
+import { ThemeContext } from './context/theme_context';
+import { useCounter } from './hooks/use_counter';
 
 export default function CustomHookDemoScreen() {
     const { theme } = useContext(ThemeContext);

@@ -60,6 +60,17 @@ npm run lint
 
 ---
 
+## 命名規則
+
+- GitHub repository 與正式 checkout 資料夾使用 `react-native-learning`。
+- `app/` 內自建資料夾與檔名使用 `snake_case`。
+- Expo Router 的 route 字串必須與檔案路徑完全一致。
+- TypeScript 型別與 React component 沿用語言慣例。
+- `_layout.tsx`、`index.tsx` 與套件管理檔保留框架固定名稱。
+- 第三方資產檔名保留來源名稱，避免與上游對照失效。
+
+---
+
 ## 範例設計
 
 - 每頁只教一組概念。

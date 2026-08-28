@@ -28,7 +28,7 @@ export default function DeviceAdaptationMainScreen() {
 
                 <TouchableOpacity
                     style={[styles.button, { backgroundColor: '#3498DB' }]}
-                    onPress={() => router.push("/deviceAdaptation/demoFlatList" as any)}
+                    onPress={() => router.push("/device_adaptation/demo_flat_list" as any)}
                 >
                     <Text style={styles.buttonText}>➡ 前往 FlatList 實戰教學</Text>
                 </TouchableOpacity>
@@ -50,7 +50,7 @@ export default function DeviceAdaptationMainScreen() {
 
                 <TouchableOpacity
                     style={[styles.button, { backgroundColor: '#E74C3C' }]}
-                    onPress={() => router.push("/deviceAdaptation/demoKeyboard" as any)}
+                    onPress={() => router.push("/device_adaptation/demo_keyboard" as any)}
                 >
                     <Text style={styles.buttonText}>➡ 前往鍵盤與安全範圍控制實戰</Text>
                 </TouchableOpacity>
