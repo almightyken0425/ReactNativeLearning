@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 // 引入拆分出去的模組
-import { ThemeContext } from './context/ThemeContext';
+import { ThemeContext } from './context/theme_context';
 
 export default function AdvancedStateManagementScreen() {
     // ==========================================
@@ -79,7 +79,7 @@ export default function AdvancedStateManagementScreen() {
                             styles.button,
                             { backgroundColor: isDark ? '#007AFF' : '#8B7355' }
                         ]}
-                        onPress={() => router.push("/stateManagement/demoUseState" as any)}
+                        onPress={() => router.push("/state_management/demo_use_state" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 useState 範例</Text>
                     </TouchableOpacity>
@@ -120,7 +120,7 @@ export default function AdvancedStateManagementScreen() {
                             styles.button,
                             { backgroundColor: isDark ? '#FF9800' : '#8B7355' }
                         ]}
-                        onPress={() => router.push("/stateManagement/demoUseEffect" as any)}
+                        onPress={() => router.push("/state_management/demo_use_effect" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 useEffect 範例</Text>
                     </TouchableOpacity>
@@ -177,7 +177,7 @@ export default function AdvancedStateManagementScreen() {
                             styles.button,
                             { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }
                         ]}
-                        onPress={() => router.push("/stateManagement/demoUseContext" as any)}
+                        onPress={() => router.push("/state_management/demo_use_context" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往設定頁切換主題</Text>
                     </TouchableOpacity>
@@ -219,7 +219,7 @@ export default function AdvancedStateManagementScreen() {
                             styles.button,
                             { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }
                         ]}
-                        onPress={() => router.push("/stateManagement/demoUseReducer" as any)}
+                        onPress={() => router.push("/state_management/demo_use_reducer" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 useReducer 範例</Text>
                     </TouchableOpacity>
@@ -258,7 +258,7 @@ export default function AdvancedStateManagementScreen() {
                             styles.button,
                             { backgroundColor: isDark ? '#BB86FC' : '#8B7355' }
                         ]}
-                        onPress={() => router.push("/stateManagement/demoUseCustomHook" as any)}
+                        onPress={() => router.push("/state_management/demo_use_custom_hook" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 Custom Hook 範例</Text>
                     </TouchableOpacity>
@@ -299,7 +299,7 @@ export default function AdvancedStateManagementScreen() {
                             styles.button,
                             { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }
                         ]}
-                        onPress={() => router.push("/stateManagement/demoUseMemo" as any)}
+                        onPress={() => router.push("/state_management/demo_use_memo" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往 useMemo 範例</Text>
                     </TouchableOpacity>
@@ -340,7 +340,7 @@ export default function AdvancedStateManagementScreen() {
                             styles.button,
                             { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }
                         ]}
-                        onPress={() => router.push("/stateManagement/demoReactMemo" as any)}
+                        onPress={() => router.push("/state_management/demo_react_memo" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往首部曲 React.memo</Text>
                     </TouchableOpacity>
@@ -381,7 +381,7 @@ export default function AdvancedStateManagementScreen() {
                             styles.button,
                             { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }
                         ]}
-                        onPress={() => router.push("/stateManagement/demoUseCallback" as any)}
+                        onPress={() => router.push("/state_management/demo_use_callback" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往二部曲 useCallback</Text>
                     </TouchableOpacity>
@@ -420,7 +420,7 @@ export default function AdvancedStateManagementScreen() {
                             styles.button,
                             { backgroundColor: isDark ? '#4CAF50' : '#8B7355' }
                         ]}
-                        onPress={() => router.push("/stateManagement/demoMemoAndCallback" as any)}
+                        onPress={() => router.push("/state_management/demo_memo_and_callback" as any)}
                     >
                         <Text style={styles.buttonText}>➡ 前往三部曲完美結合</Text>
                     </TouchableOpacity>

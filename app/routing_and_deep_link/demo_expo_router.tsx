@@ -61,7 +61,7 @@ export default function DemoExpoRouterScreen() {
                     {'\n\n'}
                     <Text style={[styles.codeText, { fontSize: 12 }]}>
                         router.push({'{'}{'\n'}
-                        {'  '}pathname: "/routingAndDeepLink/demoDeepLink",{'\n'}
+                        {'  '}pathname: "/routing_and_deep_link/demo_deep_link",{'\n'}
                         {'  '}params: {'{'} user: "Ken", id: "123" {'}'}{'\n'}
                         {'}'});
                     </Text>
@@ -70,7 +70,7 @@ export default function DemoExpoRouterScreen() {
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => router.push({
-                        pathname: "/routingAndDeepLink/demoPage" as any,
+                        pathname: "/routing_and_deep_link/demo_page" as any,
                         params: { user: "Ken", action: "test_push" }
                     })}
                 >

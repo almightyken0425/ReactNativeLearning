@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { ThemeContext } from './context/ThemeContext';
+import { ThemeContext } from './context/theme_context';
 
 export default function SettingsScreen() {
     // 💡 我們直接從 Context 開啟收音機，拿到「設定新主題的遙控器(setTheme)」和「當前主題(theme)」

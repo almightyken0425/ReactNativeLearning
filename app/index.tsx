@@ -11,7 +11,7 @@ export default function IndexMenu() {
                         <View style={styles.divider} />
                     </View>
 
-                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/flexboxProfileCard" as any)}>
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/flexbox_profile_card" as any)}>
                         <Text style={styles.chapterNumber}>01</Text>
                         <View style={styles.chapterContent}>
                             <Text style={styles.chapterTitle}>Flexbox 名片排版</Text>
@@ -20,7 +20,7 @@ export default function IndexMenu() {
                         <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/componentDataFlow" as any)}>
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/component_data_flow" as any)}>
                         <Text style={styles.chapterNumber}>02</Text>
                         <View style={styles.chapterContent}>
                             <Text style={styles.chapterTitle}>元件化與資料</Text>
@@ -29,7 +29,7 @@ export default function IndexMenu() {
                         <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/typeVsInterface" as any)}>
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/type_vs_interface" as any)}>
                         <Text style={styles.chapterNumber}>03</Text>
                         <View style={styles.chapterContent}>
                             <Text style={styles.chapterTitle}>Type 與 Interface</Text>
@@ -38,7 +38,7 @@ export default function IndexMenu() {
                         <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/arrayStateAndStorage" as any)}>
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/array_state_and_storage" as any)}>
                         <Text style={styles.chapterNumber}>04</Text>
                         <View style={styles.chapterContent}>
                             <Text style={styles.chapterTitle}>陣列操作與資料持久化</Text>
@@ -47,7 +47,7 @@ export default function IndexMenu() {
                         <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/stateManagement/main" as any)}>
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/state_management/main" as any)}>
                         <Text style={styles.chapterNumber}>05</Text>
                         <View style={styles.chapterContent}>
                             <Text style={styles.chapterTitle}>狀態管理</Text>
@@ -56,7 +56,7 @@ export default function IndexMenu() {
                         <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/routingAndDeepLink/main" as any)}>
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/routing_and_deep_link/main" as any)}>
                         <Text style={styles.chapterNumber}>06</Text>
                         <View style={styles.chapterContent}>
                             <Text style={styles.chapterTitle}>路由與深層連結</Text>
@@ -65,7 +65,7 @@ export default function IndexMenu() {
                         <Text style={styles.arrow}>›</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/deviceAdaptation/main" as any)}>
+                    <TouchableOpacity style={styles.chapterButton} onPress={() => router.push("/device_adaptation/main" as any)}>
                         <Text style={styles.chapterNumber}>07</Text>
                         <View style={styles.chapterContent}>
                             <Text style={styles.chapterTitle}>行動裝置適配</Text>

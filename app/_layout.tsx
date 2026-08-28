@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
 import React, { useState } from 'react';
-import { ThemeContext, ThemeType } from './stateManagement/context/ThemeContext';
+import { ThemeContext, ThemeType } from './state_management/context/theme_context';
 
 export default function RootLayout() {
   // ==========================================
@@ -21,17 +21,17 @@ export default function RootLayout() {
           name="index"
           options={{ title: 'React Native 百科全書' }}
         />
-        <Stack.Screen name="routingAndDeepLink/main" options={{ title: '📥 路由與深層連結' }} />
-        <Stack.Screen name="routingAndDeepLink/demoExpoRouter" options={{ title: '🚗 基礎堆疊導航' }} />
-        <Stack.Screen name="routingAndDeepLink/demoPage" options={{ title: '🎯 參數接收頁面' }} />
-        <Stack.Screen name="routingAndDeepLink/(demoTabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="routingAndDeepLink/demoHeaderButtons" options={{ title: '🕹️ 標題操作按鈕' }} />
-        <Stack.Screen name="stateManagement/main" options={{ title: 'Hooks 狀態與副作用百科' }} />
-        <Stack.Screen name="stateManagement/demoUseState" options={{ title: 'useState 雙向綁定' }} />
-        <Stack.Screen name="stateManagement/demoUseEffect" options={{ title: 'useEffect 表單驗證' }} />
-        <Stack.Screen name="stateManagement/demoUseContext" options={{ title: '⚙️ 全域設定' }} />
-        <Stack.Screen name="stateManagement/demoUseReducer" options={{ title: '複雜狀態機' }} />
-        <Stack.Screen name="stateManagement/demoUseCustomHook" options={{ title: '自訂鉤子' }} />
+        <Stack.Screen name="routing_and_deep_link/main" options={{ title: '📥 路由與深層連結' }} />
+        <Stack.Screen name="routing_and_deep_link/demo_expo_router" options={{ title: '🚗 基礎堆疊導航' }} />
+        <Stack.Screen name="routing_and_deep_link/demo_page" options={{ title: '🎯 參數接收頁面' }} />
+        <Stack.Screen name="routing_and_deep_link/(demo_tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="routing_and_deep_link/demo_header_buttons" options={{ title: '🕹️ 標題操作按鈕' }} />
+        <Stack.Screen name="state_management/main" options={{ title: 'Hooks 狀態與副作用百科' }} />
+        <Stack.Screen name="state_management/demo_use_state" options={{ title: 'useState 雙向綁定' }} />
+        <Stack.Screen name="state_management/demo_use_effect" options={{ title: 'useEffect 表單驗證' }} />
+        <Stack.Screen name="state_management/demo_use_context" options={{ title: '⚙️ 全域設定' }} />
+        <Stack.Screen name="state_management/demo_use_reducer" options={{ title: '複雜狀態機' }} />
+        <Stack.Screen name="state_management/demo_use_custom_hook" options={{ title: '自訂鉤子' }} />
       </Stack>
     </ThemeContext.Provider>
   );
